@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Infrastructure | AIC SOA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Shared site styles (navbar, fonts, colors, etc.) -->
+  <link rel="stylesheet" href="../styles/aic.css" />
+
+  <!-- Page-specific styles -->
+  <style>
+    :root {
+      --accent: #ffb100;
+      --accent-dark: #f97316;
+      --primary: #0b3c7c;
+      --bg: #f5f7fb;
+      --card-radius: 14px;
+      --shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: #111827;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      min-height: 100vh;
+      background-color: #fff;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("bannerinfra.jpg");
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.6);
+      transform: scale(1.03);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0.1),
+        rgba(15, 23, 42, 0.75)
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 960px;
+      padding: 64px 16px 80px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 4vw, 3rem);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .hero-subtitle {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #e5e7eb;
+      margin-bottom: 26px;
+    }
+
+    .hero-stats {
+      display: inline-flex;
+      gap: 40px;
+      padding: 12px 24px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .stat-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #d1d5db;
+      margin-top: 3px;
+    }
+
+    /* SECTIONS WRAPPER */
+    .content-section {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 40px 16px 70px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .section-heading h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1f2937;
+      margin-bottom: 4px;
+    }
+
+    .section-heading p {
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    .divider {
+      width: 72px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(to right, var(--accent), var(--accent-dark));
+      margin: 14px auto 0;
+    }
+
+    /* CARD GRID (Workspace) */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      justify-items: center;
+    }
+
+    @media (max-width: 960px) {
+      .card-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      .card-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .info-card {
+      width: 100%;
+      max-width: 210px;
+      background: #ffffff;
+      border-radius: var(--card-radius);
+      padding: 18px 16px 16px;
+      box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e5e7eb;
+      cursor: pointer;
+      text-align: center;
+      transition: transform 150ms ease-out, box-shadow 150ms ease-out,
+        border-color 150ms ease-out;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-soft);
+      border-color: rgba(59, 130, 246, 0.5);
+    }
+
+    .info-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      margin: 0 auto 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 30% 30%, #ffffff, #e5f0ff);
+      color: var(--primary);
+      font-size: 18px;
+    }
+
+    .info-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 4px;
+    }
+
+    .info-text {
+      font-size: 0.75rem;
+      color: #6b7280;
+      line-height: 1.4;
+    }
+
+    /* ADVANCED LAB SECTION */
+    .labs-wrapper {
+      margin-top: 40px;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      border-radius: 999px;
+      padding: 6px 18px;
+      border: 1px solid #d1d5db;
+      background: #f9fafb;
+      color: #4b5563;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+      transition: background 140ms ease-out, color 140ms ease-out, box-shadow 140ms,
+        border-color 140ms;
+    }
+
+    .tab-btn.active {
+      background: linear-gradient(to right, var(--primary), #2563eb);
+      color: #ffffff;
+      border-color: transparent;
+      box-shadow: 0 10px 26px rgba(37, 99, 235, 0.4);
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    /* TECHNICAL LABS GRID */
+    .labs-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .labs-grid.tab-panel.active {
+      display: flex;
+    }
+
+    .tools-panel.tab-panel.active {
+      display: block;
+    }
+
+    .labs-grid .lab-card {
+      flex: 1 1 calc(20% - 18px);
+      min-width: 210px;
+    }
+
+    @media (max-width: 960px) {
+      .labs-grid .lab-card {
+        flex: 1 1 calc(33.333% - 18px);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .labs-grid .lab-card {
+        flex: 1 1 calc(50% - 18px);
+      }
+    }
+
+    @media (max-width: 520px) {
+      .labs-grid .lab-card {
+        flex: 1 1 100%;
+      }
+    }
+
+    .lab-card {
+      background: #ffffff;
+      border-radius: var(--card-radius);
+      padding: 16px 16px 14px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+      cursor: pointer;
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: transform 160ms ease-out, box-shadow 160ms ease-out,
+        border-color 160ms ease-out, background-color 160ms ease-out;
+    }
+
+    .lab-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: var(--shadow-soft);
+      border-color: rgba(37, 99, 235, 0.65);
+      background-color: #f9fafb;
+    }
+
+    .lab-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 4px;
+    }
+
+    .lab-text {
+      font-size: 0.78rem;
+      color: #6b7280;
+      line-height: 1.4;
+    }
+
+    .lab-count {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 0.7rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #ecfdf3;
+      color: #166534;
+      font-weight: 600;
+    }
+
+    /* Equipment & tools pills */
+    .tools-heading {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .tools-heading h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 4px;
+    }
+
+    .tools-heading p {
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    .tools-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .tool-pill {
+      border-radius: 999px;
+      border: 1px solid #bfdbfe;
+      background: #eff6ff;
+      color: #1d4ed8;
+      padding: 6px 14px;
+      font-size: 0.78rem;
+      cursor: default;
+      white-space: nowrap;
+      transition: background 120ms ease-out, border-color 120ms ease-out,
+        box-shadow 120ms ease-out;
+    }
+
+    .tool-pill:hover {
+      background: #dbeafe;
+      border-color: #60a5fa;
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.18);
+    }
+
+    /* MODAL */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 40;
+    }
+
+    .modal-backdrop.show {
+      display: flex;
+    }
+
+    .modal {
+      max-width: 640px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 24px 80px rgba(15, 23, 42, 0.3);
+      border: 1px solid #e5e7eb;
+      overflow: hidden;
+      animation: modalIn 180ms ease-out;
+    }
+
+    @keyframes modalIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .modal-header {
+      padding: 16px 20px 12px;
+      background: linear-gradient(to right, var(--primary), #2563eb);
+      color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .modal-header h3 {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .modal-header p {
+      font-size: 0.8rem;
+      opacity: 0.85;
+    }
+
+    .modal-close {
+      border: none;
+      background: rgba(15, 23, 42, 0.2);
+      color: #ffffff;
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .modal-body {
+      padding: 16px 20px 18px;
+      font-size: 0.85rem;
+      color: #4b5563;
+      line-height: 1.6;
+    }
+
+    .modal-body ul {
+      margin-left: 16px;
+      margin-top: 6px;
+    }
+
+    .modal-body li {
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">Infrastructure</h1>
+        <p class="hero-subtitle">        
+          Fab lab for digital fabrication, rapid prototyping &amp; product development solutions
+        </p>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-value">15+</div>
+            <div class="stat-label">Advanced Labs</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">200+</div>
+            <div class="stat-label">Equipment &amp; Tools</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">24/7</div>
+            <div class="stat-label">Access &amp; Security</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKSPACE AMENITIES -->
+    <section class="content-section" id="workspace">
+      <header class="section-heading">
+        <h2>Workspace Amenities</h2>
+        <p>Founders-first workspaces that balance comfort, focus and collaboration.</p>
+        <div class="divider"></div>
+      </header>
+
+      <div class="card-grid">
+        <article class="info-card" data-modal="wifi">
+          <div class="info-icon">📶</div>
+          <h3 class="info-title">High-Speed Wi‑Fi</h3>
+          <p class="info-text">
+            Campus-wide, secure high‑speed internet connectivity for always‑on work.
+          </p>
+        </article>
+
+        <article class="info-card" data-modal="desk">
+          <div class="info-icon">💼</div>
+          <h3 class="info-title">Work Desk</h3>
+          <p class="info-text">
+            Ergonomic desks and seating, tuned for long, productive build days.
+          </p>
+        </article>
+
+        <article class="info-card" data-modal="board">
+          <div class="info-icon">🏢</div>
+          <h3 class="info-title">Board Rooms</h3>
+          <p class="info-text">
+            AV‑enabled rooms for reviews, pitches, partner and investor meetings.
+          </p>
+        </article>
+
+        <article class="info-card" data-modal="security">
+          <div class="info-icon">🛡️</div>
+          <h3 class="info-title">24/7 Security</h3>
+          <p class="info-text">
+            Round‑the‑clock security &amp; access control for people, labs and assets.
+          </p>
+        </article>
+
+        <article class="info-card" data-modal="reception">
+          <div class="info-icon">🧑‍💼</div>
+          <h3 class="info-title">Reception Services</h3>
+          <p class="info-text">
+            Front‑desk support for visitors, deliveries, registrations and queries.
+          </p>
+        </article>
+
+        <article class="info-card" data-modal="cafeteria">
+          <div class="info-icon">☕</div>
+          <h3 class="info-title">Cafeteria</h3>
+          <p class="info-text">
+            On‑campus food options and breakout space for informal discussions.
+          </p>
+        </article>
+
+        <article class="info-card" data-modal="medical">
+          <div class="info-icon">🏥</div>
+          <h3 class="info-title">Medical Facilities</h3>
+          <p class="info-text">
+            Basic medical assistance and tie‑ups for emergencies and wellness.
+          </p>
+        </article>
+
+        <article class="info-card" data-modal="gym">
+          <div class="info-icon">🏃‍♂️</div>
+          <h3 class="info-title">Gym &amp; Sports Ground</h3>
+          <p class="info-text">
+            Fitness and sports spaces to keep founders energised and active.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ADVANCED LABORATORY INFRASTRUCTURE -->
+    <section class="content-section" id="labs">
+      <header class="section-heading">
+        <h2>Advanced Laboratory Infrastructure</h2>
+        <p>Technical labs and tool clusters that support idea‑to‑prototype journeys.</p>
+        <div class="divider"></div>
+      </header>
+
+      <div class="labs-wrapper">
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="technical">Technical Labs</button>
+          <button class="tab-btn" data-tab="equipment">All Equipment &amp; Tools</button>
+        </div>
+
+        <!-- TECHNICAL LABS TAB -->
+        <div class="labs-grid tab-panel active" id="tab-technical">
+          <article class="lab-card" data-modal="fab-lab">
+            <span class="lab-count">45+ Equipment</span>
+            <h3 class="lab-title">Fab Lab</h3>
+            <p class="lab-text">Digital Fabrication &amp; Prototyping</p>
+          </article>
+
+          <article class="lab-card" data-modal="lab-5g">
+            <span class="lab-count">40+ Equipment</span>
+            <h3 class="lab-title">5G Lab</h3>
+            <p class="lab-text">Next-Generation Wireless Communications</p>
+          </article>
+
+          <article class="lab-card" data-modal="ai-lab">
+            <span class="lab-count">8+ Equipment</span>
+            <h3 class="lab-title">Artificial Intelligence Lab</h3>
+            <p class="lab-text">AI &amp; Machine Learning Development</p>
+          </article>
+
+          <article class="lab-card" data-modal="networking-lab">
+            <span class="lab-count">6+ Equipment</span>
+            <h3 class="lab-title">Networking Lab</h3>
+            <p class="lab-text">Network Infrastructure &amp; Security</p>
+          </article>
+
+          <article class="lab-card" data-modal="iot-lab">
+            <span class="lab-count">25+ Equipment</span>
+            <h3 class="lab-title">IoT Lab</h3>
+            <p class="lab-text">Internet of Things Development</p>
+          </article>
+
+          <article class="lab-card" data-modal="drone-lab">
+            <span class="lab-count">8+ Equipment</span>
+            <h3 class="lab-title">Drone &amp; UAV Lab</h3>
+            <p class="lab-text">Unmanned Aerial Systems</p>
+          </article>
+
+          <article class="lab-card" data-modal="data-centre-lab">
+            <span class="lab-count">15+ Equipment</span>
+            <h3 class="lab-title">Data Centre</h3>
+            <p class="lab-text">Data Storage &amp; High-Performance Computing</p>
+          </article>
+
+          <article class="lab-card" data-modal="osint-lab">
+            <span class="lab-count">5+ Equipment</span>
+            <h3 class="lab-title">OSINT Lab</h3>
+            <p class="lab-text">Open Source Intelligence</p>
+          </article>
+
+          <article class="lab-card" data-modal="reverse-lab">
+            <span class="lab-count">8+ Equipment</span>
+            <h3 class="lab-title">Reverse Engineering &amp; Malware Analysis Lab</h3>
+            <p class="lab-text">Security Analysis &amp; Reverse Engineering</p>
+          </article>
+
+          <article class="lab-card" data-modal="cyber-defence-centre">
+            <span class="lab-count">8+ Equipment</span>
+            <h3 class="lab-title">Cyber Defence Centre</h3>
+            <p class="lab-text">Cybersecurity &amp; Threat Analysis</p>
+          </article>
+
+          <article class="lab-card" data-modal="gis-lab">
+            <span class="lab-count">4+ Equipment</span>
+            <h3 class="lab-title">GIS Lab</h3>
+            <p class="lab-text">Geospatial Intelligence Systems</p>
+          </article>
+
+          <article class="lab-card" data-modal="cryptology-lab">
+            <span class="lab-count">6+ Equipment</span>
+            <h3 class="lab-title">Cryptology Lab</h3>
+            <p class="lab-text">Encryption &amp; Security Protocols</p>
+          </article>
+
+          <article class="lab-card" data-modal="programming-lab">
+            <span class="lab-count">8+ Equipment</span>
+            <h3 class="lab-title">Computer Programming Lab</h3>
+            <p class="lab-text">Software Development &amp; Programming</p>
+          </article>
+
+          <article class="lab-card" data-modal="digital-forensic-lab">
+            <span class="lab-count">4+ Equipment</span>
+            <h3 class="lab-title">Digital Forensic Lab</h3>
+            <p class="lab-text">Digital Evidence Analysis</p>
+          </article>
+
+          <article class="lab-card" data-modal="electronics-lab">
+            <span class="lab-count">20+ Equipment</span>
+            <h3 class="lab-title">Electronics Lab</h3>
+            <p class="lab-text">Electronic Circuit Design &amp; Testing</p>
+          </article>
+        </div>
+
+        <!-- EQUIPMENT & TOOLS TAB -->
+        <div class="tools-panel tab-panel" id="tab-equipment">
+          <div class="tools-heading">
+            <h3>Complete Equipment &amp; Tools List</h3>
+            <p>
+              All equipment and tools available across our laboratories including the Fab Lab and 5G Lab
+              for comprehensive research and development.
+            </p>
+          </div>
+
+          <div class="tools-cloud">
+            <!-- A sample of the equipment pills from your list; extend as needed -->
+            <button type="button" class="tool-pill">Epilog Mini Laser Cutter</button>
+            <button type="button" class="tool-pill">CO2 Laser Engraver</button>
+            <button type="button" class="tool-pill">Ultimaker 3D Printer</button>
+            <button type="button" class="tool-pill">Form 2 SLA 3D Printer</button>
+            <button type="button" class="tool-pill">ShopBot CNC Router</button>
+            <button type="button" class="tool-pill">Roland MDX-20 Precision Mill</button>
+            <button type="button" class="tool-pill">Roland CAMM-1 Vinyl Cutter</button>
+            <button type="button" class="tool-pill">Soldering Stations</button>
+            <button type="button" class="tool-pill">Digital Multimeters</button>
+            <button type="button" class="tool-pill">Oscilloscope</button>
+            <button type="button" class="tool-pill">Function Generator</button>
+            <button type="button" class="tool-pill">Arduino Kits</button>
+            <button type="button" class="tool-pill">Raspberry Pi</button>
+            <button type="button" class="tool-pill">CAD Workstations</button>
+            <button type="button" class="tool-pill">3D Scanner</button>
+            <button type="button" class="tool-pill">Heat Press</button>
+            <button type="button" class="tool-pill">Vacuum Former</button>
+            <button type="button" class="tool-pill">Large Format Printer</button>
+            <button type="button" class="tool-pill">Power Tools Set</button>
+            <button type="button" class="tool-pill">Hand Tools Collection</button>
+            <button type="button" class="tool-pill">Acrylic Sheets</button>
+            <button type="button" class="tool-pill">Plywood</button>
+            <button type="button" class="tool-pill">3D Printing Filaments</button>
+            <button type="button" class="tool-pill">5G Base Stations</button>
+            <button type="button" class="tool-pill">5G Core Network</button>
+            <button type="button" class="tool-pill">5G Radio Units</button>
+            <button type="button" class="tool-pill">5G SA Infrastructure (Mid Band)</button>
+            <button type="button" class="tool-pill">5G SIMs</button>
+            <button type="button" class="tool-pill">5G Smartphones and Modems</button>
+            <button type="button" class="tool-pill">Software-Defined Radio (SDR)</button>
+            <button type="button" class="tool-pill">USRP Platforms</button>
+            <button type="button" class="tool-pill">HackRF</button>
+            <button type="button" class="tool-pill">MIMO Antennas</button>
+            <button type="button" class="tool-pill">Omnidirectional Antennas</button>
+            <button type="button" class="tool-pill">Directional Antennas</button>
+            <button type="button" class="tool-pill">RF Signal Generators</button>
+            <!-- ...continue adding the rest of your equipment list here as non-expandable pills... -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal-backdrop" id="infra-modal">
+    <div class="modal" role="dialog" aria-modal="true">
+      <header class="modal-header">
+        <div>
+          <h3 id="modal-title">Title</h3>
+          <p id="modal-sub">Short description.</p>
+        </div>
+        <button class="modal-close" type="button" aria-label="Close">&times;</button>
+      </header>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script>
+    // TAB SWITCHING
+    const tabButtons = document.querySelectorAll(".tab-btn");
+    const tabPanels = {
+      technical: document.getElementById("tab-technical"),
+      equipment: document.getElementById("tab-equipment"),
+    };
+
+    tabButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        tabButtons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const tab = btn.dataset.tab;
+        Object.keys(tabPanels).forEach((key) => {
+          tabPanels[key].classList.toggle("active", key === tab);
+        });
+      });
+    });
+
+    // MODAL DATA
+    const modalContent = {
+      // Workspace amenities
+      wifi: {
+        title: "High-Speed Wi‑Fi",
+        sub: "Campus-wide, secure connectivity for founders and teams.",
+        body: `
+          <p>High‑speed internet is available across workspaces, labs and collaboration areas.</p>
+          <ul>
+            <li>Secure, role‑based Wi‑Fi networks for founders, guests and labs.</li>
+            <li>Redundant links to keep work moving even during peak hours.</li>
+            <li>Support for video calls, cloud tooling and remote collaborations.</li>
+          </ul>
+        `,
+      },
+      desk: {
+        title: "Work Desk",
+        sub: "Ergonomic, flexible seating for everyday work.",
+        body: `
+          <p>Desks are tuned for comfort during long sprints and review cycles.</p>
+          <ul>
+            <li>Ergonomic seating and power points at every station.</li>
+            <li>Mix of hot desks and dedicated founder bays.</li>
+            <li>Quiet zones and collaboration-friendly clusters.</li>
+          </ul>
+        `,
+      },
+      board: {
+        title: "Board Rooms",
+        sub: "AV-enabled spaces for reviews, pitches and discussions.",
+        body: `
+          <p>Board and meeting rooms are designed for clear communication and decision-making.</p>
+          <ul>
+            <li>Integrated screens, VC setups and whiteboards.</li>
+            <li>Configurable seating layouts for different formats.</li>
+            <li>Advance booking to ensure availability for critical reviews.</li>
+          </ul>
+        `,
+      },
+      security: {
+        title: "24/7 Security",
+        sub: "Secure infrastructure and controlled access across the campus.",
+        body: `
+          <p>Founders can work at extended hours with robust security in place.</p>
+          <ul>
+            <li>Access control at building, floor and lab levels.</li>
+            <li>CCTV coverage of key movement zones and entries.</li>
+            <li>Emergency response protocols and on‑call support.</li>
+          </ul>
+        `,
+      },
+      reception: {
+        title: "Reception Services",
+        sub: "A professional front-desk experience for visitors and partners.",
+        body: `
+          <p>The reception team makes day‑to‑day operations smoother for founders.</p>
+          <ul>
+            <li>Handling of visitors, deliveries and courier services.</li>
+            <li>Support for event registrations and meeting coordination.</li>
+            <li>Basic information and campus navigation assistance.</li>
+          </ul>
+        `,
+      },
+      cafeteria: {
+        title: "Cafeteria",
+        sub: "On‑campus food and beverage options for teams.",
+        body: `
+          <p>Spaces to recharge, meet informally and host quick check‑ins.</p>
+          <ul>
+            <li>Light snacks, beverages and simple meal options.</li>
+            <li>Seating designed for both solo breaks and group conversations.</li>
+            <li>Convenient proximity to work areas without disrupting focus.</li>
+          </ul>
+        `,
+      },
+      medical: {
+        title: "Medical Facilities",
+        sub: "Basic medical support and tie‑ups for emergencies.",
+        body: `
+          <p>Health and safety remain a priority for resident founders and visitors.</p>
+          <ul>
+            <li>First‑aid and primary medical assistance on campus.</li>
+            <li>Linkages with nearby hospitals and emergency services.</li>
+            <li>Clear guidance for reporting and handling incidents.</li>
+          </ul>
+        `,
+      },
+      gym: {
+        title: "Gym &amp; Sports Ground",
+        sub: "Spaces that encourage balance, fitness and community.",
+        body: `
+          <p>Physical activity is encouraged as part of a sustainable founder journey.</p>
+          <ul>
+            <li>Gym equipment for strength and cardio routines.</li>
+            <li>Sports grounds and open areas for team activities.</li>
+            <li>Suitable timings so founders can plug sessions into their schedules.</li>
+          </ul>
+        `,
+      },
+
+      // Technical labs
+      "fab-lab": {
+        title: "Digital Fabrication Lab",
+        sub: "Move from CAD to physical prototypes quickly and safely.",
+        body: `
+          <p>Teams can turn digital models into functional parts without leaving the campus.</p>
+          <ul>
+            <li>3D printers for enclosures, fixtures and functional components.</li>
+            <li>Laser cutting for panels, templates and jigs.</li>
+            <li>Light tools and finishing stations for final touches.</li>
+          </ul>
+        `,
+      },
+      "lab-5g": {
+        title: "5G Lab",
+        sub: "Next-generation wireless communication testbed.",
+        body: `
+          <p>This lab enables experimentation with full 5G stacks and RF environments.</p>
+          <ul>
+            <li>5G base stations, core network components and radio units.</li>
+            <li>RF test benches with generators, analyzers and shielding.</li>
+            <li>Device and application testing for phones, IoT and edge devices.</li>
+          </ul>
+        `,
+      },
+      "ai-lab": {
+        title: "Artificial Intelligence Lab",
+        sub: "AI and machine learning experimentation and prototyping.",
+        body: `
+          <p>The AI Lab supports the full lifecycle of intelligent applications.</p>
+          <ul>
+            <li>GPU-enabled workstations for training and inference workloads.</li>
+            <li>Support for popular ML and deep‑learning frameworks.</li>
+            <li>Tooling for data preparation, model evaluation and deployment experiments.</li>
+          </ul>
+        `,
+      },
+      "networking-lab": {
+        title: "Networking Lab",
+        sub: "Network infrastructure, routing and security.",
+        body: `
+          <p>The Networking Lab focuses on wired and wireless network design and hardening.</p>
+          <ul>
+            <li>Enterprise-grade switches, routers and firewalls.</li>
+            <li>Network simulators and packet analysis tools.</li>
+            <li>Hands‑on exercises for configuration, troubleshooting and security.</li>
+          </ul>
+        `,
+      },
+      "iot-lab": {
+        title: "IoT Lab",
+        sub: "End‑to‑end Internet of Things prototyping.",
+        body: `
+          <p>Teams can design, connect and test IoT devices and platforms.</p>
+          <ul>
+            <li>Sensors, microcontrollers and communication modules.</li>
+            <li>Gateways and cloud connectivity for device management.</li>
+            <li>Testbeds for interoperability, power and reliability studies.</li>
+          </ul>
+        `,
+      },
+      "drone-lab": {
+        title: "Drone &amp; UAV Lab",
+        sub: "Unmanned aerial systems development and testing.",
+        body: `
+          <p>This lab supports experimentation with multirotor platforms and payloads.</p>
+          <ul>
+            <li>Indoor-safe drone cages and flight areas.</li>
+            <li>Autopilot, navigation and telemetry stacks.</li>
+            <li>Payload integrations for imaging and sensing.</li>
+          </ul>
+        `,
+      },
+      "data-centre-lab": {
+        title: "Data Centre",
+        sub: "Data storage and high‑performance computing resources.",
+        body: `
+          <p>Back‑end infrastructure for compute‑intensive and data‑heavy workloads.</p>
+          <ul>
+            <li>Server racks with virtualisation and container platforms.</li>
+            <li>High‑capacity storage and backup systems.</li>
+            <li>Monitoring and management dashboards.</li>
+          </ul>
+        `,
+      },
+      "osint-lab": {
+        title: "OSINT Lab",
+        sub: "Open source intelligence collection and analysis.",
+        body: `
+          <p>The OSINT Lab is designed for ethical intelligence and investigation workflows.</p>
+          <ul>
+            <li>Toolsets for web, social and infrastructure reconnaissance.</li>
+            <li>Frameworks and processes for structured evidence collection.</li>
+            <li>Training datasets and scenarios for investigation practice.</li>
+          </ul>
+        `,
+      },
+      "reverse-lab": {
+        title: "Reverse Engineering &amp; Malware Analysis Lab",
+        sub: "Controlled environment for binary and malware analysis.",
+        body: `
+          <p>Specialised infrastructure for dissecting binaries and malicious artefacts.</p>
+          <ul>
+            <li>Isolated sandboxes and analysis virtual machines.</li>
+            <li>Static and dynamic reverse‑engineering toolchains.</li>
+            <li>Workflows for documentation, reporting and knowledge sharing.</li>
+          </ul>
+        `,
+      },
+      "cyber-defence-centre": {
+        title: "Cyber Defence Centre",
+        sub: "Cybersecurity monitoring, defence and threat analysis.",
+        body: `
+          <p>This centre simulates modern SOC environments for training and research.</p>
+          <ul>
+            <li>SIEM, IDS/IPS and vulnerability assessment tools.</li>
+            <li>Realistic attack–defence scenarios and blue‑team labs.</li>
+            <li>Dashboards for incident response and threat hunting.</li>
+          </ul>
+        `,
+      },
+      "gis-lab": {
+        title: "GIS Lab",
+        sub: "Geospatial intelligence and mapping workflows.",
+        body: `
+          <p>Founders can work with spatial datasets and build location‑aware solutions.</p>
+          <ul>
+            <li>GIS software stacks and satellite imagery sources.</li>
+            <li>Tools for spatial analysis, visualisation and modelling.</li>
+            <li>Support for integrating maps into applications and dashboards.</li>
+          </ul>
+        `,
+      },
+      "cryptology-lab": {
+        title: "Cryptology Lab",
+        sub: "Encryption, cryptographic protocols and secure systems.",
+        body: `
+          <p>The Cryptology Lab explores modern cryptographic primitives and implementations.</p>
+          <ul>
+            <li>Experimentation with symmetric and asymmetric schemes.</li>
+            <li>Hands‑on labs for key management and secure communication.</li>
+            <li>Tools for analysing protocol strength and implementation flaws.</li>
+          </ul>
+        `,
+      },
+      "programming-lab": {
+        title: "Computer Programming Lab",
+        sub: "Software development, algorithms and systems programming.",
+        body: `
+          <p>This lab provides a focused environment for learning and practising programming.</p>
+          <ul>
+            <li>Workstations with modern IDEs, compilers and debuggers.</li>
+            <li>Support for multiple languages and frameworks.</li>
+            <li>Version control and collaboration tooling.</li>
+          </ul>
+        `,
+      },
+      "digital-forensic-lab": {
+        title: "Digital Forensic Lab",
+        sub: "Digital evidence acquisition and analysis.",
+        body: `
+          <p>The Digital Forensic Lab is set up for lawful investigation of digital artefacts.</p>
+          <ul>
+            <li>Imaging and triage tools for disks and mobile devices.</li>
+            <li>Workstations hardened for evidence handling.</li>
+            <li>Frameworks for chain‑of‑custody and structured reporting.</li>
+          </ul>
+        `,
+      },
+
+      // Equipment & tools (for future use if needed)
+    };
+
+    // MODAL LOGIC
+    const modalBackdrop = document.getElementById("infra-modal");
+    const modalTitle = document.getElementById("modal-title");
+    const modalSub = document.getElementById("modal-sub");
+    const modalBody = document.getElementById("modal-body");
+    const modalCloseBtn = document.querySelector(".modal-close");
+
+    function openModal(key) {
+      const content = modalContent[key];
+      if (!content) return;
+
+      modalTitle.textContent = content.title;
+      modalSub.textContent = content.sub;
+      modalBody.innerHTML = content.body;
+      modalBackdrop.classList.add("show");
+    }
+
+    function closeModal() {
+      modalBackdrop.classList.remove("show");
+    }
+
+    document.querySelectorAll(".info-card, .lab-card").forEach((card) => {
+      card.addEventListener("click", () => {
+        const key = card.getAttribute("data-modal");
+        openModal(key);
+      });
+    });
+
+    modalCloseBtn.addEventListener("click", closeModal);
+
+    modalBackdrop.addEventListener("click", (e) => {
+      if (e.target === modalBackdrop) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modalBackdrop.classList.contains("show")) {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>

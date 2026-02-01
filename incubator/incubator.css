@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #222;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1553877522-43269d4ea984');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 42px;
+}
+
+.hero span {
+  color: #f28c28;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* INCUBATION BOX */
+.incubation-box {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 40px 50px;
+  background: linear-gradient(135deg, #fff7ee, #ffffff);
+  border-left: 6px solid #f28c28;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.incubation-box h2 {
+  font-size: 32px;
+  color: #f28c28;
+  margin-bottom: 15px;
+}
+
+.incubation-box p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* SECTIONS */
+.section {
+  padding: 60px 80px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+
+.section h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #f28c28, #ffb347);
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.card {
+  width: 260px;
+  padding: 30px 24px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #fff6eb, #fffaf3);
+  border: 2px solid rgba(242, 140, 40, 0.25);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(242, 140, 40, 0.35);
+}
+
+/* CARD CONTENT */
+.card img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 18px;
+  filter: drop-shadow(0 6px 10px rgba(242, 140, 40, 0.35));
+}
+
+.card h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #f28c28;
+}
+
+.card p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* FUNDING CARD – SAME ORANGE */
+.card.highlight {
+  background: linear-gradient(145deg, #fff3e3, #fff9f2);
+  border: 2px solid rgba(242, 140, 40, 0.4);
+  box-shadow: 0 12px 28px rgba(242, 140, 40, 0.25);
+}
+
+.card.highlight:hover {
+  box-shadow: 0 25px 45px rgba(242, 140, 40, 0.45);
+}
+
+/* SINGLE CARD (SYSTEM ENGINEERING) */
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.single-card {
+  width: 360px;
+  padding: 36px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #fff6eb, #fffaf3);
+  border: 2px solid rgba(242, 140, 40, 0.25);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+  transition: all 0.35s ease;
+}
+
+.single-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 45px rgba(242, 140, 40, 0.35);
+}
+
+.single-card h3 {
+  font-size: 23px;
+  margin-bottom: 12px;
+  color: #f28c28;
+}
+
+.single-card p {
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* CTA */
+.cta-box {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 50px 40px;
+  text-align: center;
+  background: linear-gradient(135deg, #fff7ee, #ffffff);
+  border: 2px solid rgba(242, 140, 40, 0.25);
+  border-radius: 18px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+.cta-box h2 {
+  font-size: 34px;
+  color: #f28c28;
+  margin-bottom: 10px;
+}
+
+.cta-box p {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  padding: 14px 42px;
+  font-size: 17px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #f28c28, #ffb347);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(242, 140, 40, 0.45);
+}
+
+/* FOOTER */
+.footer {
+  background: #222;
+  color: #aaa;
+  text-align: center;
+  padding: 20px;
+}

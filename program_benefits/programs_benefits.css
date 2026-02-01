@@ -1,0 +1,392 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background: #f6f7fb;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+/* ================= NAVBAR ================= */
+.top-nav {
+  background: linear-gradient(90deg, #fff7c2 0%, #efe6ff 100%);
+  padding: 12px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+}
+
+.logo {
+  height: 46px;
+}
+
+/* MENU */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-menu a,
+.dropdown-btn {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  color: #2c2c6c;
+  padding: 8px 14px;
+  border-radius: 10px;
+  transition: 0.25s ease;
+}
+
+.nav-menu a:hover,
+.dropdown-btn:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  background: #ffffff;
+  min-width: 210px;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.dropdown-menu a {
+  padding: 14px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.dropdown-menu a:hover {
+  background: #fff4dc;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+/* RIGHT LOGOS */
+.nav-right img {
+  height: 42px;
+  margin-left: 14px;
+}
+
+/* ================= HERO ================= */
+.hero {
+  height: 360px;
+  background: url(https://www.aicsoa.in/assets/pbanner-D58lGyJU.jpg)
+    center/cover no-repeat;
+}
+
+.hero-overlay {
+  background: rgba(32, 44, 85, 0.78);
+  height: 100%;
+  padding: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-size: 44px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.hero span {
+  font-weight: 400;
+}
+
+.highlight {
+  color: #ff9c1a;
+}
+
+.hero p {
+  max-width: 720px;
+  margin-top: 18px;
+  font-size: 18px;
+  color: #e6e8f2;
+}
+
+/* ================= PROGRAM BENEFITS ================= */
+.benefits-section {
+  padding: 80px 40px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: #1e2d5a;
+}
+
+.benefits-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+/* CARD */
+.benefit-card {
+  background: #ffffff;
+  padding: 45px 35px;
+  border-radius: 22px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.benefit-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+  border-color: #9b7cff;
+}
+
+/* ICON */
+.icon-circle {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 22px;
+  border-radius: 50%;
+  background: #eef1ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: #3f6ae1;
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover .icon-circle {
+  background: #9b7cff;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.benefit-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #1e2d5a;
+  transition: color 0.3s ease;
+}
+
+.benefit-card:hover h3 {
+  color: #7b5cff;
+}
+
+.benefit-card p {
+  color: #555;
+  font-size: 16px;
+}
+
+/* ================= OFFERINGS SECTION ================= */
+.offerings-section {
+  padding: 80px 40px 100px;
+  background: #f6f7fb;
+}
+
+.offerings-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e2d5a;
+}
+
+.offerings-underline {
+  width: 50px;
+  height: 4px;
+  background: #9b7cff;
+  margin: 14px auto 25px;
+  border-radius: 5px;
+}
+
+.offerings-subtitle {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  font-size: 16px;
+  color: #555;
+}
+
+.offerings-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  gap: 35px;
+}
+
+.offering-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+.offering-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+}
+
+.left-border {
+  border-left: 5px solid #ffb703;
+}
+
+.right-border {
+  border-left: 5px solid #7b5cff;
+}
+
+.offering-card h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e2d5a;
+  margin-bottom: 10px;
+}
+
+.offering-card p {
+  font-size: 15px;
+  color: #555;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  background: #2b2b2b;
+  color: #d1d5db;
+  margin-top: 90px;
+}
+
+.footer-main {
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 45px;
+  padding: 55px 50px;
+}
+
+.footer-col h4 {
+  color: #ff9c1a;
+  margin-bottom: 22px;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+.footer-col a {
+  display: block;
+  color: #cbd5e1;
+  text-decoration: none;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.footer-col a:hover {
+  color: #ffffff;
+}
+
+.social-icons {
+  display: flex;
+  gap: 14px;
+}
+
+.social-icons a {
+  width: 40px;
+  height: 40px;
+  background: #3b3b3b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background: #ff9c1a;
+  color: #000;
+}
+
+.footer-col iframe {
+  width: 100%;
+  height: 160px;
+  border-radius: 12px;
+  border: none;
+}
+
+.footer-links {
+  border-top: 1px solid #444;
+  padding: 18px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.footer-links a {
+  color: #bdbdbd;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #ff9c1a;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 16px;
+  font-size: 13px;
+  color: #a1a1aa;
+  border-top: 1px solid #444;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .offerings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    height: auto;
+  }
+
+  .hero-overlay {
+    padding: 50px 30px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+}

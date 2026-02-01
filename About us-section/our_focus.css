@@ -1,0 +1,414 @@
+/* =========================================
+   GLOBAL STYLES & RESETS
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+h1, h2, h3 {
+    color: #0a1a3c; /* Deep Navy Blue */
+}
+
+.section-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   SECTION 1: HOMEPAGE BANNER & AIM
+========================================= */
+.hero-banner {
+    /* Using a gradient placeholder. Replace with your actual banner image */
+    background: linear-gradient(rgba(10, 26, 60, 0.9), rgba(10, 26, 60, 0.9)), url('https://via.placeholder.com/1920x600?text=Tech+Background');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.banner-content h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: white;
+    animation: slideUpFade 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.banner-content .highlight {
+    color: #f05a22; /* Orange */
+}
+
+.banner-content .subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    animation: slideUpFade 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s both;
+}
+
+.aim-section {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.aim-section .logos img {
+    /* Set a smaller height to match the first photo */
+    /* 80px is usually the 'sweet spot' for these partner logos */
+    height: 80px; 
+    
+    /* This ensures they don't look squished or stretched */
+    width: auto;
+    object-fit: contain;
+    
+    /* Adds a little space between the two logos */
+    margin: 0 15px;
+}
+
+.aim-section .logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.aim-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.aim-section p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.8;
+}
+/* This defines the actual movement and fade effect */
+@keyframes slideUpFade {
+    0% {
+        transform: translateY(50px); /* Starts 50px below its final position */
+        opacity: 0;                 /* Starts completely invisible */
+    }
+    100% {
+        transform: translateY(0);   /* Moves to its original position */
+        opacity: 1;                 /* Becomes fully visible */
+    }
+}
+
+
+
+
+/* =========================================
+   SECTION 3: FOCUS AREAS & CORE INDUSTRIES
+========================================= */
+.focus-areas-section {
+    padding: 80px 20px;
+    background-color: #f9f9f9; /* Slight off-white background */
+}
+
+.focus-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.focus-item {
+    flex: 1;
+    min-width: 200px;
+    max-width: 220px;
+    text-align: center;
+}
+
+.icon-box {
+    height: 70px;
+    width: 70px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Using Font Awesome Icons with gradient text */
+.icon-box i {
+    font-size: 30px;
+    background: linear-gradient(to right, #0056b3, #f05a22);
+    
+    /* Order matters: Webkit versions first for compatibility */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Standard version for future-proofing and Firefox */
+    background-clip: text;
+    color: transparent; 
+}
+
+.focus-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+}
+
+.focus-item p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+/* ANimation for focus */
+.focus-item {
+    padding: 20px;
+    border-radius: 12px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* Smooth spring-like transition */
+    background: transparent;
+}
+
+/* The Hover State */
+.focus-item:hover {
+    transform: translateY(-10px); /* Lifts the item up */
+    background: #ffffff;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
+}
+
+/* Icon Pulse Effect */
+.focus-item:hover .icon-box i {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* =========================================
+   SECTION 4: GLIMPSES GALLERY
+========================================= */
+.glimpses-section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* Container for the gallery */
+.glimpses-gallery {
+    display: flex;
+    justify-content: flex-start; /* Keeps items aligned for the slide */
+    gap: 15px; 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    /* flex-wrap: wrap; <-- REMOVED this line */
+}
+
+/* Container that clips the sliding track */
+.glimpses-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden; /* This hides the images that aren't centered */
+    padding: 20px 0;
+}
+
+/* 1. Update the track to use the animation */
+.glimpses-track {
+    display: flex;
+    gap: 20px;
+    width: max-content; /* Ensures the track is as wide as all images combined */
+    
+    /* ADD THIS LINE: This triggers the continuous movement */
+    animation: scroll 50s linear infinite; 
+}
+
+/* 2. ADD THIS AT THE BOTTOM: This defines the sliding movement */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* This should be half the width of your total images for a smooth loop */
+        transform: translateX(-50%); 
+    }
+}
+
+/* Individual Gallery Item - FIXED RESOLUTION */
+.gallery-item {
+    flex: 0 0 280px; /* Locked width */
+    height: 220px;   /* Locked height */
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures all images look the same resolution */
+    transition: all 0.5s ease;
+}
+
+/* HOVER EFFECTS (The magic happens here) */
+.gallery-item:hover {
+    transform: scale(1.08); /* Zooms the whole card in slightly */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    z-index: 10; /* Ensures the zoomed item stays on top */
+}
+
+.gallery-item:hover img {
+    filter: grayscale(0%); /* Returns color on hover */
+    transform: scale(1.1); /* Adds a secondary zoom to the image itself */
+}
+/* Pause the auto-slide when you hover over it */
+.glimpses-container:hover .glimpses-track {
+    animation-play-state: paused;
+}
+
+/* Responsive: 2 images on mobile */
+@media (max-width: 768px) {
+    .gallery-item {
+        flex: 0 0 calc(50% - 20px);
+    }
+}
+
+
+/* =========================================
+   LIGHTBOX STYLES
+========================================= */
+
+/* The dark background overlay */
+.lightbox {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* Stays on top of everything */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Dark semi-transparent black */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* The actual full photo */
+.lightbox-content {
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    animation: zoomIn 0.3s ease-out; /* Smooth pop-up animation */
+}
+
+/* Close Button (the X) */
+.close-lightbox {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-lightbox:hover {
+    color: #f05a22; /* Changes to the orange highlight color on hover */
+}
+
+/* Zoom animation for a professional feel */
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+/* Mobile adjustments */
+@media (max-width: 700px) {
+    .lightbox-content {
+        width: 100%;
+    }
+}
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .gallery-item {
+        flex: 0 0 calc(50% - 15px); /* 2 items per row on mobile */
+    }
+}
+/* Navigation Buttons Styling */
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    font-size: 40px;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.3s;
+    user-select: none;
+    z-index: 1010;
+}
+
+.prev-btn { left: 30px; }
+.next-btn { right: 30px; }
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: #f05a22; /* Matches SOA orange theme */
+}
+
+/* Add a sliding animation when switching images */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.lightbox-content.fade {
+    animation: slideIn 0.4s ease-out;
+}
+
+
+/* =========================================
+   RESPONSIVE MEDIA QUERIES
+========================================= */
+@media (max-width: 1024px) {
+    .gallery-item {
+        flex: 0 0 calc(33.333% - 20px); /* 3 items per row on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-banner { height: 300px; }
+    .banner-content h1 { font-size: 2.5rem; }
+    .banner-content .subtitle { font-size: 1.1rem; }
+
+    .founders-card {
+        flex-direction: column;
+        padding: 30px;
+    }
+    .card-image {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+    .signature { text-align: center; }
+
+    .focus-grid { flex-direction: column; align-items: center; }
+    .focus-item { max-width: 400px; margin-bottom: 30px; }
+
+    .gallery-item {
+        flex: 0 0 calc(50% - 20px); /* 2 items per row on mobile */
+    }
+}
