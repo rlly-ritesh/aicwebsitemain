@@ -248,15 +248,18 @@ const initTestimonials = () => {
 const initNavbarScroll = () => {
     const navbar = document.querySelector('.navbar');
     const headerTop = document.querySelector('.header-top');
+    const alertBar = document.querySelector('.alert-bar');
     if (!navbar || !headerTop) return;
 
     const updateNavbarState = () => {
         if (window.scrollY <= 5) {
             navbar.classList.remove('navbar--scrolled'); // top: gradient background
             headerTop.classList.remove('header-top--scrolled');
+            if (alertBar) alertBar.classList.remove('alert-bar--hidden'); // show alert at top
         } else {
             navbar.classList.add('navbar--scrolled'); // scrolled: white translucent
             headerTop.classList.add('header-top--scrolled');
+            if (alertBar) alertBar.classList.add('alert-bar--hidden'); // hide alert when scrolling
         }
     };
 

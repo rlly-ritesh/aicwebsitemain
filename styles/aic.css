@@ -120,6 +120,17 @@ body {
     white-space: nowrap; 
     display: flex; 
     align-items: center; 
+    transition: opacity 0.3s ease, transform 0.3s ease, max-height 0.3s ease, padding 0.3s ease;
+    max-height: 40px;
+}
+
+/* Hidden state when user scrolls down */
+.alert-bar.alert-bar--hidden {
+    opacity: 0;
+    transform: translateY(-100%);
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .alert-label { 
