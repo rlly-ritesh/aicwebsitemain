@@ -52,70 +52,81 @@ const expertData = [
         org: "Govt of India", 
         designation: "HEAD-NRDC OUTREACH OFFICE", 
         quote: "Connecting <span>research lab technology</span> to practical use, uniting stakeholders to foster entrepreneurship, innovation for societal benefits, aligns with India's vision and values for impactful collaborative ecosystems.", 
-        pic: "/aicwebsitemain/assets/EXPERT REVIEW/bksahu-BnY5GmXA.jpg" 
+        pic: "./assets/expert-review/bksahu-BnY5GmXA.jpg",
+        video: "https://www.youtube.com/embed/s88RZ7Yfmuw"
     },
     { 
         name: "Shri Manmath K Badapanda", 
         org: "RRCAT (DAE), Indore", 
         designation: "SENIOR SCIENTIST", 
         quote: "Startups are <span>innovators and risk-takers</span> and as you grow and expand, you must ensure that there is proper financial management and a proper audit.", 
-        pic: "/aicwebsitemain/assets/EXPERT REVIEW/mkbadapanda-CmlpdCua.jpg" 
+        pic: "./assets/expert-review/mkbadapanda-CmlpdCua.jpg",
+        video: "https://www.youtube.com/embed/eUPTLa5GSx0"
     },
     { 
         name: "Prof. Narayana P Padhy", 
         org: "Malavya National Institute of Technology(MNIT),Jaipur", 
         designation: "DIRECTOR", 
         quote: "The government's only idea is to be a catalyst in Startup promotion. We are hoping that via this, it becomes easier for Startups to operate worldwide.", 
-        pic: "/aicwebsitemain/assets/EXPERT REVIEW/nppadhy-DOd2QGIa.jpg" 
+        pic: "./assets/expert-review/nppadhy-DOd2QGIa.jpg",
+        video: "https://www.youtube.com/embed/jqWlHUfXaRc"
     },
     { 
         name: "Mr. Chandan Samantaray", 
         org: "Faculty in Department Of Engineering,Virginia State University", 
         designation: "PROFESSOR", 
         quote: "Technology should be accessible to everyone. Our goal is to bridge the digital divide and empower communities.", 
-        pic: "/aicwebsitemain/assets/EXPERT REVIEW/chandansamantaray-BV628n7n.jpg" 
+        pic: "./assets/expert-review/chandansamantaray-BV628n7n.jpg",
+        video: "https://www.youtube.com/embed/QuHnH88M2mI"
     },
     { 
         name: "Mr. Mrutyunjaya Mohapatra", 
         org: "India Meteorological Department, Government Of India", 
         designation: "DIRECTOR GENERAL OF METEORLOGY", 
         quote: " I appreciate the rapid development and high standards of the AIC-SOA Foundation for its supportive environment for budding entrepreneurs and startups. The AIC-SOA Foundation is marching a ahead for continued success in fostering knowledge, expertise, and industrial growth in India.", 
-        pic: "/aicwebsitemain/assets/EXPERT REVIEW/mmohapatra-_IzG5hrZ.jpg" 
+        pic: "./assets/expert-review/mmohapatra-_IzG5hrZ.jpg" ,
+        video: "https://www.youtube.com/embed/_xYLJ07x0_I"
     },
     { 
         name: "H.E.Mr.Fernando Xavier Bucheli Vargas", 
         org: "Ecuador", 
         designation: "AMBASSADOR OF ECUADOR TO INDIA", 
         quote:  "The future is now there is urgent need to act in the present to advance sustainable development goals.Sustainable practices are not an option but a necessity for long-term economic and environmental health.", 
-        pic: "/aicwebsitemain/assets/EXPERT REVIEW/fernando-C24TBo3b.jpg" 
+        pic: "./assets/expert-review/fernando-C24TBo3b.jpg" ,
+        video: "https://www.youtube.com/embed/_6tP_DKmIHU"
     },
      { 
         name: "H.E.Mr.Omar Lisandro Castaneda Solares", 
         org: "Guatemala", 
         designation: "AMBASSADOR OF Guatemala TO INDIA", 
         quote:  "The AIC-SOA Foundation successfully fosters an environment for rich creativity and provides the crucial support needed to  build successful startups for the disruptive  technology in force.", 
-        pic: "/aicwebsitemain/assets/EXPERT REVIEW/omar-D5L5ivtV.jpg" 
+        pic: "./assets/expert-review/omar-D5L5ivtV.jpg" ,
+        video: "https://www.youtube.com/embed/awQYOoPdqYE"
     },
     { 
         name: "Prof.Ujjwal Maulik", 
         org: "Kolkata", 
         designation: "Jadavpur University", 
         quote:  "This center is so good, well-planned. Young generations are really trying hard; I believe many startups from here will do very well in the future.", 
-        pic: "/aicwebsitemain/assets/EXPERT REVIEW/Ujjwal-BOHyuDBS.jpg" 
+        pic: "./assets/expert-review/Ujjwal-BOHyuDBS.jpg" ,
+        video: "https://www.youtube.com/embed/n_q1tyhIiqg"
+
     },
     { 
         name: "Prof.Bijaya Ketan Panigrahi", 
         org: "", 
         designation: "IIT,DELHI", 
         quote:  "The AIC-SOA Foundation is the perfect platform for encouraging young minds from diverse domains to collaborate and innovate. It’s an excellent initiative for building deep-tech startups, aligning perfectly with the vision of 'Viksit Bharat'", 
-        pic: "/aicwebsitemain/assets/EXPERT REVIEW/panigrahi-CTgwxTGS.jpg" 
+        pic: "./assets/expert-review/panigrahi-CTgwxTGS.jpg",
+        video: "https://www.youtube.com/embed/TKWOgCGhcgI" 
     },
     { 
         name: "Dr.Debi Prasad Tripathy", 
         org: "Northern Ontario School Of Medicine Univeristy, Canada", 
         designation: "Jadavpur University", 
         quote:  "The AIC-SOA’s incubation in medtech, agritech, and deep tech, highlighting an AI device for rapid cervical cancer diagnosis and its broader impact on food security and Odisha.", 
-        pic: "/aicwebsitemain/assets/EXPERT REVIEW/debiprasad-DTdjJ6Yi.jpg" 
+        pic: "./assets/expert-review/debiprasad-DTdjJ6Yi.jpg" ,
+        video: "https://www.youtube.com/embed/48s-n2Z3fvw"
     },
 ];
 
@@ -170,42 +181,56 @@ const initSagaSlider = () => {
 };
 
 // 
-// 4. EXPERT REVIEWS (Enhanced Template)
+// // 
+// 4. EXPERT REVIEWS (Enhanced Template + Video Support)
 // 
+
 let expertIdx = 0;
 let isExpertAnimating = false;
 
 const showExpert = (n) => {
     if (isExpertAnimating) return;
     isExpertAnimating = true;
-    
+
     const card = document.getElementById('expertCard');
     if (!card) return;
 
     card.style.opacity = '0';
     card.style.transform = 'translateY(10px)';
-    
+
     setTimeout(() => {
         expertIdx = n;
         const data = expertData[n];
-        
-        // Update Text & Template
+
+        // Update expert content
         document.getElementById('expertName').innerText = data.name;
         document.getElementById('expertOrg').innerText = data.org;
-        document.getElementById('expertQuote').innerHTML = data.quote; // Use innerHTML for spans
+        document.getElementById('expertQuote').innerHTML = data.quote;
         document.getElementById('expertPic').src = data.pic;
-        
+
         const designationEl = document.querySelector('.expert-profile-side .designation');
         if (designationEl) designationEl.innerText = data.designation;
-        
-        // Update Nav
-        document.querySelectorAll('.nav-dot').forEach((d, i) => {
-            d.className = i === n ? 'nav-dot active' : 'nav-dot';
+
+        // ✅ Update video button dynamically
+        const videoBtn = document.querySelector('.expert-video-btn');
+        if (videoBtn) {
+            if (data.video) {
+                videoBtn.style.display = "flex";
+                videoBtn.setAttribute('data-video', data.video);
+            } else {
+                videoBtn.style.display = "none";
+                videoBtn.removeAttribute('data-video');
+            }
+        }
+
+        // Update navigation dots
+        document.querySelectorAll('.nav-dot').forEach((dot, i) => {
+            dot.className = i === n ? 'nav-dot active' : 'nav-dot';
         });
-        
+
         card.style.opacity = '1';
         card.style.transform = 'translateY(0)';
-        
+
         setTimeout(() => isExpertAnimating = false, 500);
     }, 400);
 };
@@ -213,35 +238,62 @@ const showExpert = (n) => {
 const initExpertSlider = () => {
     const expertDotBox = document.getElementById('expertDots');
     if (!expertDotBox) return;
-    
+
     expertDotBox.innerHTML = '';
+
     expertData.forEach((_, i) => {
-        const d = document.createElement('div');
-        d.className = i === 0 ? 'nav-dot active' : 'nav-dot';
-        d.onclick = () => { if(!isExpertAnimating && expertIdx !== i) showExpert(i); };
-        expertDotBox.appendChild(d);
+        const dot = document.createElement('div');
+        dot.className = i === 0 ? 'nav-dot active' : 'nav-dot';
+        dot.onclick = () => {
+            if (!isExpertAnimating && expertIdx !== i) {
+                showExpert(i);
+            }
+        };
+        expertDotBox.appendChild(dot);
     });
 
+    // Expose navigation controls
     window.changeExpert = (n) => {
         if (isExpertAnimating) return;
         showExpert((expertIdx + n + expertData.length) % expertData.length);
     };
+
+    // Load first expert properly (important)
+    showExpert(0);
 };
 
 // 
-// 5. ALERT TICKER (Continuous Loop)
+// 4.1 EXPERT VIDEO MODAL
 // 
-const initAlertTicker = () => {
-    const ticker = document.querySelector('.alert-ticker');
-    if (!ticker) return;
+const initExpertVideoModal = () => {
+    const modal = document.getElementById("expertVideoModal");
+    const iframe = document.getElementById("expertVideoFrame");
+    const closeBtn = document.querySelector(".expert-video-close");
+    const overlay = document.querySelector(".expert-video-overlay");
+    const videoBtns = document.querySelectorAll(".expert-video-btn");
 
-    // Duplicate content so CSS marquee scroll feels continuous
-    const original = ticker.innerHTML.trim();
-    // Avoid duplicating multiple times if function runs twice
-    if (ticker.dataset.loopInitialized === 'true') return;
-    ticker.innerHTML = `${original} a0a0 • a0a0 ${original}`;
-    ticker.dataset.loopInitialized = 'true';
+    if (!modal || !iframe || !closeBtn || !overlay) return;
+
+    videoBtns.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            const videoURL = btn.getAttribute("data-video");
+            if (!videoURL) return;
+
+            iframe.src = videoURL + "?autoplay=1";
+            modal.classList.add("active");
+        });
+    });
+
+    const closeModal = () => {
+        modal.classList.remove("active");
+        iframe.src = "";
+    };
+
+    closeBtn.addEventListener("click", closeModal);
+    overlay.addEventListener("click", closeModal);
 };
+
 
 // 
 // 5. TESTIMONIAL SLIDER (Infinite Round)
@@ -325,6 +377,21 @@ const initNavbarScroll = () => {
 };
 
 // 
+// 6.5 ALERT TICKER (Continuous Loop)
+// 
+const initAlertTicker = () => {
+    const ticker = document.querySelector('.alert-ticker');
+    if (!ticker) return;
+
+    const original = ticker.innerHTML.trim();
+    if (ticker.dataset.loopInitialized === 'true') return;
+
+    ticker.innerHTML = `${original} • ${original}`;
+    ticker.dataset.loopInitialized = 'true';
+};
+
+
+// 
 // 7. INITIALIZATION
 // 
 document.addEventListener('DOMContentLoaded', () => {
@@ -332,6 +399,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCounters();
     initSagaSlider();
     initExpertSlider();
+    initExpertVideoModal();
     initTestimonials();
     initNavbarScroll();
     

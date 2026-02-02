@@ -1,521 +1,703 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AIC-SOA Foundation Clone</title>
     <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="./styles/aic.css">
-</head>
+    <link rel="stylesheet" href="./styles/aic.css" />
+  </head>
 
-<body>
-
+  <body>
     <!-- Top Header & Navigation -->
     <div class="header-top">
-        <header class="navbar">
-
-            <!-- LEFT: AIC Logo -->
-            <div class="logo-container">
-                <img src="./assets/logos/aiclogo.png" alt="aic">
-                <div class="logo-text"></div>
-            </div>
-
-            <!-- CENTER: NAV LINKS -->
-            <nav class="nav-links">
-
-                <div class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </div>
-
-                <div class="nav-item">
-                    <a href="#" class="nav-link">About Us</a>
-                    <div class="dropdown-menu">
-                        <a href="./About us-section/founders_desk.html">Founder's Desk</a>
-                        <a href="#">Board Members</a>
-                        <a href="#">Team</a>
-                        <a href="./About us-section/our_focus.html">Our Focus</a>
-                        <a href="./Pages/Infrastructure.html">Infrastructure</a>
-                    </div>
-                </div>
-
-                <div class="nav-item">
-                    <a href="#" class="nav-link">Programs</a>
-                    <div class="dropdown-menu">
-                        <a href="./program_benefits/programs_benefits.html">Program Benefits</a>
-                        <a href="./incubator/incubator.html">Incubator</a>
-                        <a href="./virtual_incubator/virtual_incubator.html">Virtual Incubator</a>
-                    </div>
-                </div>
-
-                <div class="nav-item">
-                    <a href="#" class="nav-link">Startup Hubs</a>
-                    <div class="dropdown-menu">
-                        <a href="https://www.startupindia.gov.in/">Startup India Website</a>
-                        <a href="https://startupodisha.gov.in/">Startup Odisha Website</a>
-                        <a href="https://aim.gov.in/">Atal Innovation Mission</a>
-                        <a href="https://missionshakti.odisha.gov.in/">Women Empowerment Funds</a>
-                        <a href="https://msme.gov.in/women-entrepreneurs">Women MSME Policy</a>
-                    </div>
-                </div>
-
-                <div class="nav-item">
-                    <a href="#" class="nav-link">Community</a>
-                    <div class="dropdown-menu">
-                        <a href="./Pages/startup.html">Startups</a>
-                        <a href="./Pages/mentor.html">Our Mentors</a>
-                        <a href="./Pages/partner.html">Partners</a>
-                        <a href="./Pages/supported.html">Supported By</a>
-                    </div>
-                </div>
-
-                <div class="nav-item">
-                    <a href="#" class="nav-link">Resources</a>
-                    <div class="dropdown-menu">
-                        <a href="./Gallery/gallery.html">Our Gallery</a>
-                    </div>
-                </div>
-
-                <div class="nav-item">
-                    <a href="#" class="nav-link">Connect</a>
-                    <div class="dropdown-menu">
-                        <a href="#">FAQs</a>
-                        <a href="#">Contact Us</a>
-                        <a href="#">Visit AIC-SOA</a>
-                        <a href="#">Newsletter</a>
-                    </div>
-                </div>
-
-            </nav>
-
-            <!-- RIGHT: GOV LOGOS (🔥 direct child of navbar) -->
-            <div class="gov-logo-group">
-                <img src="Nitiayog-BmYBgTyb.png" alt="NITI Aayog">
-            </div>
-
-        </header>
-
-
-
-        <!-- Dynamic Alert Ticker -->
-        <div class="alert-bar">
-            <div class="alert-label">Alert</div>
-            <div class="alert-ticker">
-                Advertisement for recruitment of CEO & other roles at Atal Incubation Centre (AIC) SOA Foundation <span
-                    class="ticker-tag tag-update">UPDATE</span> <span class="ticker-tag tag-new">NEW</span> | New
-                advertisement out now! | Join our growing ecosystem...
-            </div>
+      <header class="navbar">
+        <!-- LEFT: AIC Logo -->
+        <div class="logo-container">
+          <img src="./assets/logos/aiclogo.png" alt="aic" />
+          <div class="logo-text"></div>
         </div>
+
+        <!-- CENTER: NAV LINKS -->
+        <nav class="nav-links">
+          <div class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </div>
+
+          <div class="nav-item">
+            <a href="#" class="nav-link">About Us</a>
+            <div class="dropdown-menu">
+              <a href="./About us-section/founders_desk.html">Founder's Desk</a>
+              <a href="#">Board Members</a>
+              <a href="#">Team</a>
+              <a href="./About us-section/our_focus.html">Our Focus</a>
+              <a href="./Pages/Infrastructure.html">Infrastructure</a>
+            </div>
+          </div>
+
+          <div class="nav-item">
+            <a href="#" class="nav-link">Programs</a>
+            <div class="dropdown-menu">
+              <a href="./program_benefits/programs_benefits.html"
+                >Program Benefits</a
+              >
+              <a href="./incubator/incubator.html">Incubator</a>
+              <a href="./virtual_incubator/virtual_incubator.html"
+                >Virtual Incubator</a
+              >
+            </div>
+          </div>
+
+          <div class="nav-item">
+            <a href="#" class="nav-link">Startup Hubs</a>
+            <div class="dropdown-menu">
+              <a href="https://www.startupindia.gov.in/"
+                >Startup India Website</a
+              >
+              <a href="https://startupodisha.gov.in/">Startup Odisha Website</a>
+              <a href="https://aim.gov.in/">Atal Innovation Mission</a>
+              <a href="https://missionshakti.odisha.gov.in/"
+                >Women Empowerment Funds</a
+              >
+              <a href="https://msme.gov.in/women-entrepreneurs"
+                >Women MSME Policy</a
+              >
+            </div>
+          </div>
+
+          <div class="nav-item">
+            <a href="#" class="nav-link">Community</a>
+            <div class="dropdown-menu">
+              <a href="./Pages/startup.html">Startups</a>
+              <a href="./Pages/mentor.html">Our Mentors</a>
+              <a href="./Pages/partner.html">Partners</a>
+              <a href="./Pages/supported.html">Supported By</a>
+            </div>
+          </div>
+
+          <div class="nav-item">
+            <a href="#" class="nav-link">Resources</a>
+            <div class="dropdown-menu">
+              <a href="./Gallery/gallery.html">Our Gallery</a>
+            </div>
+          </div>
+
+          <div class="nav-item">
+            <a href="#" class="nav-link">Connect</a>
+            <div class="dropdown-menu">
+              <a href="#">FAQs</a>
+              <a href="#">Contact Us</a>
+              <a href="#">Visit AIC-SOA</a>
+              <a href="#">Newsletter</a>
+            </div>
+          </div>
+        </nav>
+
+        <!-- RIGHT: GOV LOGOS (🔥 direct child of navbar) -->
+        <div class="gov-logo-group">
+          <img src="Nitiayog-BmYBgTyb.png" alt="NITI Aayog" />
+        </div>
+      </header>
+
+      <!-- Dynamic Alert Ticker -->
+      <div class="alert-bar">
+        <div class="alert-label">Alert</div>
+        <div class="alert-ticker">
+          Advertisement for recruitment of CEO & other roles at Atal Incubation
+          Centre (AIC) SOA Foundation
+          <span class="ticker-tag tag-update">UPDATE</span>
+          <span class="ticker-tag tag-new">NEW</span> | New advertisement out
+          now! | Join our growing ecosystem...
+        </div>
+      </div>
     </div>
 
     <!-- Hero Section with Video Background -->
     <section class="hero">
-        <div class="hero-video-container">
-            <video autoplay muted loop playsinline class="hero-video">
-                <source src="herovideo.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="hero-overlay"></div>
-        </div>
-        <div class="hero-content">
-            <h1 class="hero-title">AIC- SOA FOUNDATION</h1>
-            <p class="hero-sub">
-                Atal Incubation Centre at Siksha 'O' Anusandhan <br>
-                <span class="hero-aegis">under agies of</span>
-                NITI Aayog, Govt. of India
-            </p>
-        </div>
+      <div class="hero-video-container">
+        <video autoplay muted loop playsinline class="hero-video">
+          <source src="herovideo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-content">
+        <h1 class="hero-title">AIC- SOA FOUNDATION</h1>
+        <p class="hero-sub">
+          Atal Incubation Centre at Siksha 'O' Anusandhan <br />
+          <span class="hero-aegis">under agies of</span>
+          NITI Aayog, Govt. of India
+        </p>
+      </div>
     </section>
 
     <!-- for Viksit Bharat (Objective, Mission, Vision) -->
     <section class="viksit-section">
-        <div class="section-header">
-            <h2>for Viksit Bharat</h2>
-            <div class="header-underline"></div>
+      <div class="section-header">
+        <h2>for Viksit Bharat</h2>
+        <div class="header-underline"></div>
+      </div>
+      <div class="box-container">
+        <div class="box box-orange">
+          <i class="fas fa-bullseye"></i>
+          <h3>Objective</h3>
+          <p>
+            Empowering Stakeholders of Health-Tech, Agri-Tech & Clean-Tech for
+            Transforming : DISCOVERY to DELIVERY
+          </p>
         </div>
-        <div class="box-container">
-            <div class="box box-orange">
-                <i class="fas fa-bullseye"></i>
-                <h3>Objective</h3>
-                <p>Empowering Stakeholders of Health-Tech, Agri-Tech & Clean-Tech for Transforming : DISCOVERY to
-                    DELIVERY</p>
-            </div>
-            <div class="box box-white">
-                <i class="fas fa-rocket"></i>
-                <h3>Mission</h3>
-                <p>Igniting Innovation: Building Startup Ecosystem</p>
-            </div>
-            <div class="box box-green">
-                <i class="fas fa-eye"></i>
-                <h3>Vision</h3>
-                <p>Fostering R&D Ecosystem for Affordable Tech, providing startups essential tools, infrastructure, and
-                    growth opportunities</p>
-            </div>
+        <div class="box box-white">
+          <i class="fas fa-rocket"></i>
+          <h3>Mission</h3>
+          <p>Igniting Innovation: Building Startup Ecosystem</p>
         </div>
+        <div class="box box-green">
+          <i class="fas fa-eye"></i>
+          <h3>Vision</h3>
+          <p>
+            Fostering R&D Ecosystem for Affordable Tech, providing startups
+            essential tools, infrastructure, and growth opportunities
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- We Believe In.. Section -->
     <section class="believe-section">
-        <div class="section-header">
-            <h2>We Believe In..</h2>
-            <div class="header-underline"></div>
+      <div class="section-header">
+        <h2>We Believe In..</h2>
+        <div class="header-underline"></div>
+      </div>
+      <div class="believe-container">
+        <div class="believe-card card-peach">
+          <i class="far fa-lightbulb"></i>
+          <h3>Collaborate</h3>
+          <p>Aspire to innovate—transform dreams into reality</p>
         </div>
-        <div class="believe-container">
-            <div class="believe-card card-peach">
-                <i class="far fa-lightbulb"></i>
-                <h3>Collaborate</h3>
-                <p>Aspire to innovate—transform dreams into reality</p>
-            </div>
-            <div class="believe-card card-grey">
-                <i class="fas fa-users-cog"></i>
-                <h3>Create</h3>
-                <p>Fuelling disruptive technology and fostering a culture of continuous improvement</p>
-            </div>
-            <div class="believe-card card-mint">
-                <i class="far fa-handshake"></i>
-                <h3>Connect</h3>
-                <p>Forge collaborations & partnerships through networking opportunities</p>
-            </div>
+        <div class="believe-card card-grey">
+          <i class="fas fa-users-cog"></i>
+          <h3>Create</h3>
+          <p>
+            Fuelling disruptive technology and fostering a culture of continuous
+            improvement
+          </p>
         </div>
+        <div class="believe-card card-mint">
+          <i class="far fa-handshake"></i>
+          <h3>Connect</h3>
+          <p>
+            Forge collaborations & partnerships through networking opportunities
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- Partners Logo Section -->
     <section class="logo-section partners">
-        <h2>PARTNERS</h2>
-        <p>Leading Institutions and Organizations</p>
-        <div class="marquee-container">
-            <div class="marquee-content">
-                <img src="./assets/PartnerImages/icarcuttack-BMrTpiL1.png" alt="NRRI">
-                <img src="./assets/PartnerImages/icmr-D3Sc-ZsM.png" alt="RMRC">
-                <img src="./assets/PartnerImages/iitguwahati-CFETscmB.png" alt="IIT">
-                <img src="./assets/PartnerImages/jio-IwmycTSP.png" alt="Jio">
-                <img src="./assets/PartnerImages/nitdelhi-B-aA7R4N.png" alt="NITD">
-                <img src="./assets/PartnerImages/stpi-GgkPk2zu.png" alt="STPI">
-                <img src="./assets/PartnerImages/rebacca-CQvCFeZw.png" alt="Rebaca">
-                <!-- Duplicate set for seamless loop -->
-                <img src="./assets/PartnerImages/icarcuttack-BMrTpiL1.png" alt="NRRI">
-                <img src="./assets/PartnerImages/icmr-D3Sc-ZsM.png" alt="RMRC">
-                <img src="./assets/PartnerImages/iitguwahati-CFETscmB.png" alt="IIT">
-                <img src="./assets/PartnerImages/jio-IwmycTSP.png" alt="Jio">
-            </div>
+      <h2>PARTNERS</h2>
+      <p>Leading Institutions and Organizations</p>
+      <div class="marquee-container">
+        <div class="marquee-content">
+          <img
+            src="./assets/PartnerImages/icarcuttack-BMrTpiL1.png"
+            alt="NRRI"
+          />
+          <img src="./assets/PartnerImages/icmr-D3Sc-ZsM.png" alt="RMRC" />
+          <img
+            src="./assets/PartnerImages/iitguwahati-CFETscmB.png"
+            alt="IIT"
+          />
+          <img src="./assets/PartnerImages/jio-IwmycTSP.png" alt="Jio" />
+          <img src="./assets/PartnerImages/nitdelhi-B-aA7R4N.png" alt="NITD" />
+          <img src="./assets/PartnerImages/stpi-GgkPk2zu.png" alt="STPI" />
+          <img src="./assets/PartnerImages/rebacca-CQvCFeZw.png" alt="Rebaca" />
+          <!-- Duplicate set for seamless loop -->
+          <img
+            src="./assets/PartnerImages/icarcuttack-BMrTpiL1.png"
+            alt="NRRI"
+          />
+          <img src="./assets/PartnerImages/icmr-D3Sc-ZsM.png" alt="RMRC" />
+          <img
+            src="./assets/PartnerImages/iitguwahati-CFETscmB.png"
+            alt="IIT"
+          />
+          <img src="./assets/PartnerImages/jio-IwmycTSP.png" alt="Jio" />
         </div>
-        <a href="#" class="btn-purple">LEARN MORE ABOUT PARTNERS</a>
+      </div>
+      <a href="#" class="btn-purple">LEARN MORE ABOUT PARTNERS</a>
     </section>
 
     <!-- Startups Onboarded Section -->
     <section class="logo-section startups">
-        <h2>STARTUPS ONBOARDED</h2>
-        <p>Where vision meets innovation</p>
-        <div class="startups-display-outer">
-            <div class="marquee-container reverse">
-                <div class="marquee-content">
-                    <div class="startup-logo-card"><img src="https://via.placeholder.com/150x80?text=PLANTERY"
-                            alt="Plantery"></div>
-                    <div class="startup-logo-card"><img src="./startups/Picture2-Da7PfdAM - Copy.png" alt="driEV"></div>
-                    <div class="startup-logo-card"><img src="./assets/startupimages/Picture3-CM2603tC.png"
-                            alt="Eminent"></div>
-                    <div class="startup-logo-card"><img src="./assets/startupimages/Picture4-6zIjylLZ.png" alt="Photo">
-                    </div>
-                    <div class="startup-logo-card"><img src="./assets/startupimages/Picture5-Be9iqzBd.png" alt="Solar">
-                    </div>
-                    <!-- Duplicate set for loop -->
-                    <div class="startup-logo-card"><img src="./assets/startupimages/Picture6-B7vMOLkM.png"
-                            alt="Plantery"></div>
-                    <div class="startup-logo-card"><img src="./assets/startupimages/Picture7-CGa24AsB.png" alt="driEV">
-                    </div>
-                    <div class="startup-logo-card"><img src="./assets/startupimages/Picture8-J8cKndRq.png"
-                            alt="Eminent"></div>
-                    <div class="startup-logo-card"><img src="./assets/startupimages/Picture9-So3Wtcmg.png"
-                            alt="Plantery"></div>
-                    <div class="startup-logo-card"><img src="./assets/startupimages/Picture10-DzKvKmrh.png" alt="driEV">
-                    </div>
-                    <div class="startup-logo-card"><img src="./assets/startupimages/Picture11-BdloT9py.png"
-                            alt="URBAN HYPAEA"></div>
-                    <div class="startup-logo-card"><img src="./assets/startupimages/Picture13-DG6NACa_.png"
-                            alt="Plantery"></div>
-                    <div class="startup-logo-card"><img src="./assets/startupimages/Picture14-BtBtTOwZ.png" alt="driEV">
-                    </div>
-                    <div class="startup-logo-card"><img src="./assets/startupimages/Picture15-DjzObtpp.png"
-                            alt="Eminent"></div>
-                    <div class="startup-logo-card"><img src="./assets/startupimages/Picture16-CddkGksu.png"
-                            alt="Plantery"></div>
-                    <div class="startup-logo-card"><img src="./assets/startupimages/Picture17-lHbSNtko.png" alt="driEV">
-                    </div>
-                </div>
+      <h2>STARTUPS ONBOARDED</h2>
+      <p>Where vision meets innovation</p>
+      <div class="startups-display-outer">
+        <div class="marquee-container reverse">
+          <div class="marquee-content">
+            <div class="startup-logo-card">
+              <img
+                src="https://via.placeholder.com/150x80?text=PLANTERY"
+                alt="Plantery"
+              />
             </div>
+            <div class="startup-logo-card">
+              <img src="./startups/Picture2-Da7PfdAM - Copy.png" alt="driEV" />
+            </div>
+            <div class="startup-logo-card">
+              <img
+                src="./assets/startupimages/Picture3-CM2603tC.png"
+                alt="Eminent"
+              />
+            </div>
+            <div class="startup-logo-card">
+              <img
+                src="./assets/startupimages/Picture4-6zIjylLZ.png"
+                alt="Photo"
+              />
+            </div>
+            <div class="startup-logo-card">
+              <img
+                src="./assets/startupimages/Picture5-Be9iqzBd.png"
+                alt="Solar"
+              />
+            </div>
+            <!-- Duplicate set for loop -->
+            <div class="startup-logo-card">
+              <img
+                src="./assets/startupimages/Picture6-B7vMOLkM.png"
+                alt="Plantery"
+              />
+            </div>
+            <div class="startup-logo-card">
+              <img
+                src="./assets/startupimages/Picture7-CGa24AsB.png"
+                alt="driEV"
+              />
+            </div>
+            <div class="startup-logo-card">
+              <img
+                src="./assets/startupimages/Picture8-J8cKndRq.png"
+                alt="Eminent"
+              />
+            </div>
+            <div class="startup-logo-card">
+              <img
+                src="./assets/startupimages/Picture9-So3Wtcmg.png"
+                alt="Plantery"
+              />
+            </div>
+            <div class="startup-logo-card">
+              <img
+                src="./assets/startupimages/Picture10-DzKvKmrh.png"
+                alt="driEV"
+              />
+            </div>
+            <div class="startup-logo-card">
+              <img
+                src="./assets/startupimages/Picture11-BdloT9py.png"
+                alt="URBAN HYPAEA"
+              />
+            </div>
+            <div class="startup-logo-card">
+              <img
+                src="./assets/startupimages/Picture13-DG6NACa_.png"
+                alt="Plantery"
+              />
+            </div>
+            <div class="startup-logo-card">
+              <img
+                src="./assets/startupimages/Picture14-BtBtTOwZ.png"
+                alt="driEV"
+              />
+            </div>
+            <div class="startup-logo-card">
+              <img
+                src="./assets/startupimages/Picture15-DjzObtpp.png"
+                alt="Eminent"
+              />
+            </div>
+            <div class="startup-logo-card">
+              <img
+                src="./assets/startupimages/Picture16-CddkGksu.png"
+                alt="Plantery"
+              />
+            </div>
+            <div class="startup-logo-card">
+              <img
+                src="./assets/startupimages/Picture17-lHbSNtko.png"
+                alt="driEV"
+              />
+            </div>
+          </div>
         </div>
-        <a href="#" class="btn-purple">LEARN MORE ABOUT STARTUPS</a>
+      </div>
+      <a href="#" class="btn-purple">LEARN MORE ABOUT STARTUPS</a>
     </section>
 
     <!-- Saga (Carousel) -->
     <section class="saga-section">
-        <div class="saga-container">
-            <div class="saga-text">
-                <h1>Saga</h1>
-                <div class="saga-item">
-                    <h3>Collaborative Ecosystem</h3>
-                    <p>We facilitate direct connections between mentors, industry leaders, and partners with startups,
-                        creating a vibrant support network that nurtures growth and collaboration.</p>
-                </div>
-                <div class="saga-item">
-                    <h3>Expertise</h3>
-                    <p>Our partnerships with renowned research institutions and innovation hubs enable us to access a
-                        broad spectrum of knowledge and technical expertise.</p>
-                </div>
-                <div class="saga-item">
-                    <h3>Innovation</h3>
-                    <p>We foster a culture of ongoing experimentation and adaptability, encouraging new ideas and
-                        solutions to meet the ever-changing challenges.</p>
-                </div>
-                <div class="saga-item">
-                    <h3>Mentorship</h3>
-                    <p>We provide comprehensive mentorship programs that address various aspects of startup development,
-                        including business strategy and market entry.</p>
-                </div>
-            </div>
-            <div class="saga-slider-container">
-                <div class="saga-slides" id="sagaSlides">
-                    <img src="./assets/Saga/img1.jpg" class="active" alt="Saga 1">
-                    <img src="./assets/Saga/img2.jpg" alt="Saga 2">
-                    <img src="./assets/Saga/img3.jpg" alt="Saga 3">
-                    <img src="./assets/Saga/img4.png" alt="Saga 4">
-                    <img src="./assets/Saga/img5.jpg" alt="Saga 5">
-                    <img src="./assets/Saga/img6.jpg" alt="Saga 6">
-                    <img src="./assets/Saga/img7.jpg" alt="Saga 7">
-                    <img src="./assets/Saga/img8.jpg" alt="Saga 8">
-
-                </div>
-                <div class="slider-nav">
-                    <button onclick="changeSaga(-1)"><i class="fas fa-chevron-left"></i></button>
-                    <button onclick="changeSaga(1)"><i class="fas fa-chevron-right"></i></button>
-                </div>
-            </div>
+      <div class="saga-container">
+        <div class="saga-text">
+          <h1>Saga</h1>
+          <div class="saga-item">
+            <h3>Collaborative Ecosystem</h3>
+            <p>
+              We facilitate direct connections between mentors, industry
+              leaders, and partners with startups, creating a vibrant support
+              network that nurtures growth and collaboration.
+            </p>
+          </div>
+          <div class="saga-item">
+            <h3>Expertise</h3>
+            <p>
+              Our partnerships with renowned research institutions and
+              innovation hubs enable us to access a broad spectrum of knowledge
+              and technical expertise.
+            </p>
+          </div>
+          <div class="saga-item">
+            <h3>Innovation</h3>
+            <p>
+              We foster a culture of ongoing experimentation and adaptability,
+              encouraging new ideas and solutions to meet the ever-changing
+              challenges.
+            </p>
+          </div>
+          <div class="saga-item">
+            <h3>Mentorship</h3>
+            <p>
+              We provide comprehensive mentorship programs that address various
+              aspects of startup development, including business strategy and
+              market entry.
+            </p>
+          </div>
         </div>
+        <div class="saga-slider-container">
+          <div class="saga-slides" id="sagaSlides">
+            <img src="./assets/Saga/img1.jpg" class="active" alt="Saga 1" />
+            <img src="./assets/Saga/img2.jpg" alt="Saga 2" />
+            <img src="./assets/Saga/img3.jpg" alt="Saga 3" />
+            <img src="./assets/Saga/img4.png" alt="Saga 4" />
+            <img src="./assets/Saga/img5.jpg" alt="Saga 5" />
+            <img src="./assets/Saga/img6.jpg" alt="Saga 6" />
+            <img src="./assets/Saga/img7.jpg" alt="Saga 7" />
+            <img src="./assets/Saga/img8.jpg" alt="Saga 8" />
+          </div>
+
+          <div class="slider-nav">
+            <button onclick="changeSaga(-1)">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button onclick="changeSaga(1)">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Innovation Stats (Nation Building) -->
     <section class="innovation-section">
-        <h3>Odisha Chapter</h3>
-        <h1>Innovation for Nation Building</h1>
-        <div class="stats-container">
-            <div class="stat-card">
-                <i class="fas fa-users"></i>
-                <h2 class="counter" data-target="18">0</h2>
-                <p>NUMBER OF STARTUPS</p>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-chalkboard-teacher"></i>
-                <h2 class="counter" data-target="23">0</h2>
-                <p>NUMBER OF MENTORS</p>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-calendar-alt"></i>
-                <h2 class="counter" data-target="15">0</h2>
-                <p>NUMBER OF EVENTS</p>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-tools"></i>
-                <h2 class="counter" data-target="5">0</h2>
-                <p>NUMBER OF WORKSHOPS</p>
-            </div>
+      <h3>Odisha Chapter</h3>
+      <h1>Innovation for Nation Building</h1>
+      <div class="stats-container">
+        <div class="stat-card">
+          <i class="fas fa-users"></i>
+          <h2 class="counter" data-target="18">0</h2>
+          <p>NUMBER OF STARTUPS</p>
         </div>
+        <div class="stat-card">
+          <i class="fas fa-chalkboard-teacher"></i>
+          <h2 class="counter" data-target="23">0</h2>
+          <p>NUMBER OF MENTORS</p>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-calendar-alt"></i>
+          <h2 class="counter" data-target="15">0</h2>
+          <p>NUMBER OF EVENTS</p>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-tools"></i>
+          <h2 class="counter" data-target="5">0</h2>
+          <p>NUMBER OF WORKSHOPS</p>
+        </div>
+      </div>
     </section>
 
     <!-- Expert Reviews Section -->
     <section class="expert-reviews-section">
-        <h1>Expert Reviews</h1>
-        <div class="expert-slider-outer">
-            <div id="expertCard" class="expert-card">
-                <div class="expert-profile-side">
-                    <div class="img-wrap"><img src="./assets/EXPERT REVIEW/bksahu-BnY5GmXA.jpg"
-                            id="expertPic" alt="Expert"></div>
-                    <h3 id="expertName">Dr. Bijay Kumar Sahu</h3>
-                    <p class="designation">HEAD-NRDC OUTREACH OFFICE</p>
-                    <p class="org" id="expertOrg">Govt of India</p>
-                    <div class="expert-profile-btns">
-                        <a href="#" class="expert-btn"><i class="fas fa-play"></i> Video</a>
-                        <a href="#" class="expert-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    </div>
-                </div>
-                <div class="expert-content-side">
-                    <span class="quote-mark">"</span>
-                    <p class="expert-testimonial" id="expertQuote">Connecting research lab technology to practical use,
-                        uniting stakeholders to foster entrepreneurship, innovation for societal benefits, aligns with
-                        India's vision and values.</p>
-                </div>
+      <h1>Expert Reviews</h1>
+
+      <div class="expert-slider-outer">
+        <div id="expertCard" class="expert-card">
+          <!-- LEFT PROFILE -->
+          <div class="expert-profile-side">
+            <div class="img-wrap">
+              <img
+                src="./assets/expert-review/bksahu-BnY5GmXA.jpg"
+                id="expertPic"
+                alt="Expert"
+              />
             </div>
 
-            <div class="expert-nav-controls">
-                <button class="nav-circle" onclick="changeExpert(-1)"><i class="fas fa-chevron-left"></i></button>
-                <div class="nav-dots" id="expertDots"></div>
-                <button class="nav-circle" onclick="changeExpert(1)"><i class="fas fa-chevron-right"></i></button>
+            <h3 id="expertName">Dr. Bijay Kumar Sahu</h3>
+            <p class="designation">HEAD-NRDC OUTREACH OFFICE</p>
+            <p class="org" id="expertOrg">Govt of India</p>
+
+            <div class="expert-profile-btns">
+              <!-- VIDEO BUTTON -->
+              <a
+                href="#"
+                class="expert-btn expert-video-btn"
+                data-video="https://www.youtube.com/embed/VIDEO_ID"
+              >
+                <i class="fas fa-play"></i> Video
+              </a>
+
+              <!-- LINKEDIN BUTTON -->
+              <a href="https://linkedin.com" target="_blank" class="expert-btn">
+                <i class="fab fa-linkedin"></i> LinkedIn
+              </a>
             </div>
+          </div>
+
+          <!-- RIGHT CONTENT -->
+          <div class="expert-content-side">
+            <span class="quote-mark">"</span>
+            <p class="expert-testimonial" id="expertQuote">
+              Connecting research lab technology to practical use, uniting
+              stakeholders to foster entrepreneurship, innovation for societal
+              benefits, aligns with India's vision and values.
+            </p>
+          </div>
         </div>
+
+        <!-- NAVIGATION -->
+        <div class="expert-nav-controls">
+          <button class="nav-circle" onclick="changeExpert(-1)">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+
+          <div class="nav-dots" id="expertDots"></div>
+
+          <button class="nav-circle" onclick="changeExpert(1)">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
     </section>
 
     <!-- Testimonials Slider (Infinite) -->
     <section class="testimonials-section">
-        <h1>Testimonials</h1>
-        <div class="testi-container">
-            <div class="testi-wrapper">
-                <div class="testi-track" id="testiTrack">
-                    <!-- Cards 1-9 -->
-                    <div class="testi-card">
-                        <div class="testi-img"><img src="./assets/TESTIMONIALS/Driev-1PWIyMXq.jpg"
-                                alt="AP"></div>
-                        <p class="testi-quote">"driEV is a clean mobility startup revolutionizing urban commuting with
-                            eco-friendly e-bike sharing solutions. With a fleet of over 1,100 vehicles, the company has
-                            established itself as a pioneer in sustainable urban commute. Lets driEV operates 13
-                            community stations across Bhubaneswar and is expanding into Bengaluru, offering affordable
-                            and convenient mobility solutions tailored for urban."</p>
-                        <h4 class="testi-name">Mr. Ankur Patel</h4>
-                        <span class="testi-title">Founder, LETS DRIEV</span>
-                    </div>
-                    <div class="testi-card">
-                        <div class="testi-img"><img src="./assets/TESTIMONIALS/asima-BJXWNaaJ.jpg"
-                                alt="AP"></div>
-                        <p class="testi-quote">"PhotoSpIMeDx, a MedTech startup, bridges India's diagnostic gap with
-                            accessible and affordable solutions. We specialize in early cancer detection using advanced
-                            optical techniques, creating portable and rapid tools to make quality healthcare a universal
-                            right and empower healthcare providers with real-time assessment capabilities."</p>
-                        <h4 class="testi-name">Dr. Asima Pradhan</h4>
-                        <span class="testi-title">Founder, PHOTOSPIMEDX</span>
-                    </div>
-                    <div class="testi-card">
-                        <div class="testi-img"><img src="./assets/TESTIMONIALS/hydro-C-B52VSJ.jpeg"
-                                alt="AM"></div>
-                        <p class="testi-quote">"At Hydro Valley, we believe that what you consume should nourish not
-                            just the body, but the soul. Pure, fresh, and sustainable—goodness delivered from Farm to
-                            Fork."</p>
-                        <h4 class="testi-name">Mr. Ashish Mohanty</h4>
-                        <span class="testi-title">Founder & Chief Farmer , HYDROVELLEY PVT LTD</span>
-                    </div>
-                    <div class="testi-card">
-                        <div class="testi-img"><img src="/assets/TESTIMONIALS/spkmak-BcWyiGD_.jpg"
-                                alt="AM"></div>
-                        <p class="testi-quote">""SPK MAK offers end-to-end product solutions through two models:
-                            Engineering Services and Original Design Manufacturing (ODM). The company provides
-                            everything from design and AI integration to in-house development of products that global
-                            clients can market under their own brand, effectively bridging the gap from concept to
-                            market."
-                            "</p>
-                        <h4 class="testi-name">Mr. Dhrutidhara Behera</h4>
-                        <span class="testi-title">Founder & Director, SPK-MAK TECHNOLOGIES</span>
-                    </div>
-                    <div class="testi-card">
-                        <div class="testi-img"><img src="./assets/TESTIMONIALS/Abhishek-C6VvNhVo.jpeg"
-                                alt="AM"></div>
-                        <p class="testi-quote">"As a proud student of the Agriculture College at SOA University, we
-                            designed an innovative plant-based energy storage device aimed at promoting sustainable
-                            energy solutions. This startup got mentorship and technological support provided by AIC SOA
-                            University, where I gained invaluable exposure to cutting-edge technology, industry
-                            connections, and real-world expertise."</p>
-                        <h4 class="testi-name">Mr. Abhishek Mohapatra</h4>
-                        <span class="testi-title">Founder & CEO, PLANTERY</span>
-                    </div>
-                    <div class="testi-card">
-                        <div class="testi-img"><img src="./assets/TESTIMONIALS/Arjyesh-DPFvxSwi.jpeg"
-                                alt="AM"></div>
-                        <p class="testi-quote">"At EVspeer, we are building a revolutionary on-demand EV charging
-                            platform that connects drivers in need with nearby EV users, charging stations, or our
-                            mobile chargers. By leveraging V2V technology and a community-driven approach, we ensure EV
-                            charging is seamless, accessible, and reliable wherever you are."</p>
-                        <h4 class="testi-name">Mr. Ashish Mohanty</h4>
-                        <span class="testi-title">Founder & CEO , VSPEER PVT LTD</span>
-                    </div>
-                    <div class="testi-card">
-                        <div class="testi-img"><img src="./assets/TESTIMONIALS/spkmak-BcWyiGD_.jpg" alt="AM"></div>
-                        <p class="testi-quote">""SPK MAK offers end-to-end product solutions through two models: Engineering Services and Original Design Manufacturing (ODM). The company provides everything from design and AI integration to in-house development of products that global clients can market under their own brand, effectively bridging the gap from concept to market."
-"</p>
-                        <h4 class="testi-name">Mr. Dhrutidhara Behera</h4>
-                        <span class="testi-title">Founder & Director, SPK-MAK TECHNOLOGIES</span>
-                    </div>
-                    <div class="testi-card">
-                        <div class="testi-img"><img src="./assets/TESTIMONIALS/Abhishek-C6VvNhVo.jpeg" alt="AM"></div>
-                        <p class="testi-quote">"As a proud student of the Agriculture College at SOA University, we designed an innovative plant-based energy storage device aimed at promoting sustainable energy solutions. This startup got mentorship and technological support provided by AIC SOA University, where I gained invaluable exposure to cutting-edge technology, industry connections, and real-world expertise."</p>
-                        <h4 class="testi-name">Mr. Abhishek Mohapatra</h4>
-                        <span class="testi-title">Founder & CEO, PLANTERY</span>
-                    </div>
-                    <div class="testi-card">
-                        <div class="testi-img"><img src="./assets/TESTIMONIALS/Arjyesh-DPFvxSwi.jpeg" alt="AM"></div>
-                        <p class="testi-quote">"At EVspeer, we are building a revolutionary on-demand EV charging platform that connects drivers in need with nearby EV users, charging stations, or our mobile chargers. By leveraging V2V technology and a community-driven approach, we ensure EV charging is seamless, accessible, and reliable wherever you are."</p>
-                        <h4 class="testi-name">Mr. Ashish Mohanty</h4>
-                        <span class="testi-title">Founder & CEO , VSPEER PVT LTD</span>
-                    </div>
-                    <!-- Add more cards as needed -->
-                </div>
+      <h1>Testimonials</h1>
+      <div class="testi-container">
+        <div class="testi-wrapper">
+          <div class="testi-track" id="testiTrack">
+            <!-- Cards 1-9 -->
+            <div class="testi-card">
+              <div class="testi-img">
+                <img src="./assets/TESTIMONIALS/Driev-1PWIyMXq.jpg" alt="AP" />
+              </div>
+              <p class="testi-quote">
+                "driEV is a clean mobility startup revolutionizing urban
+                commuting with eco-friendly e-bike sharing solutions. With a
+                fleet of over 1,100 vehicles, the company has established itself
+                as a pioneer in sustainable urban commute. Lets driEV operates
+                13 community stations across Bhubaneswar and is expanding into
+                Bengaluru, offering affordable and convenient mobility solutions
+                tailored for urban."
+              </p>
+              <h4 class="testi-name">Mr. Ankur Patel</h4>
+              <span class="testi-title">Founder, LETS DRIEV</span>
             </div>
-            <div class="testi-nav">
-                <button class="testi-arrow" onclick="moveTesti(-1)"><i class="fas fa-chevron-left"></i></button>
-                <button class="testi-arrow" onclick="moveTesti(1)"><i class="fas fa-chevron-right"></i></button>
+            <div class="testi-card">
+              <div class="testi-img">
+                <img src="./assets/TESTIMONIALS/asima-BJXWNaaJ.jpg" alt="AP" />
+              </div>
+              <p class="testi-quote">
+                "PhotoSpIMeDx, a MedTech startup, bridges India's diagnostic gap
+                with accessible and affordable solutions. We specialize in early
+                cancer detection using advanced optical techniques, creating
+                portable and rapid tools to make quality healthcare a universal
+                right and empower healthcare providers with real-time assessment
+                capabilities."
+              </p>
+              <h4 class="testi-name">Dr. Asima Pradhan</h4>
+              <span class="testi-title">Founder, PHOTOSPIMEDX</span>
             </div>
+            <div class="testi-card">
+              <div class="testi-img">
+                <img src="./assets/TESTIMONIALS/hydro-C-B52VSJ.jpeg" alt="AM" />
+              </div>
+              <p class="testi-quote">
+                "At Hydro Valley, we believe that what you consume should
+                nourish not just the body, but the soul. Pure, fresh, and
+                sustainable—goodness delivered from Farm to Fork."
+              </p>
+              <h4 class="testi-name">Mr. Ashish Mohanty</h4>
+              <span class="testi-title"
+                >Founder & Chief Farmer , HYDROVELLEY PVT LTD</span
+              >
+            </div>
+            <div class="testi-card">
+              <div class="testi-img">
+                <img src="./assets/TESTIMONIALS/spkmak-BcWyiGD_.jpg" alt="AM" />
+              </div>
+              <p class="testi-quote">
+                ""SPK MAK offers end-to-end product solutions through two
+                models: Engineering Services and Original Design Manufacturing
+                (ODM). The company provides everything from design and AI
+                integration to in-house development of products that global
+                clients can market under their own brand, effectively bridging
+                the gap from concept to market." "
+              </p>
+              <h4 class="testi-name">Mr. Dhrutidhara Behera</h4>
+              <span class="testi-title"
+                >Founder & Director, SPK-MAK TECHNOLOGIES</span
+              >
+            </div>
+            <div class="testi-card">
+              <div class="testi-img">
+                <img
+                  src="./assets/TESTIMONIALS/Abhishek-C6VvNhVo.jpeg"
+                  alt="AM"
+                />
+              </div>
+              <p class="testi-quote">
+                "As a proud student of the Agriculture College at SOA
+                University, we designed an innovative plant-based energy storage
+                device aimed at promoting sustainable energy solutions. This
+                startup got mentorship and technological support provided by AIC
+                SOA University, where I gained invaluable exposure to
+                cutting-edge technology, industry connections, and real-world
+                expertise."
+              </p>
+              <h4 class="testi-name">Mr. Abhishek Mohapatra</h4>
+              <span class="testi-title">Founder & CEO, PLANTERY</span>
+            </div>
+            <div class="testi-card">
+              <div class="testi-img">
+                <img
+                  src="./assets/TESTIMONIALS/Arjyesh-DPFvxSwi.jpeg"
+                  alt="AM"
+                />
+              </div>
+              <p class="testi-quote">
+                "At EVspeer, we are building a revolutionary on-demand EV
+                charging platform that connects drivers in need with nearby EV
+                users, charging stations, or our mobile chargers. By leveraging
+                V2V technology and a community-driven approach, we ensure EV
+                charging is seamless, accessible, and reliable wherever you
+                are."
+              </p>
+              <h4 class="testi-name">Mr. Ashish Mohanty</h4>
+              <span class="testi-title">Founder & CEO , VSPEER PVT LTD</span>
+            </div>
+            <!-- Add more cards as needed -->
+          </div>
         </div>
+        <div class="testi-nav">
+          <button class="testi-arrow" onclick="moveTesti(-1)">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="testi-arrow" onclick="moveTesti(1)">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
     </section>
 
     <!-- Main Footer -->
     <!-- FOOTER -->
     <footer class="main-footer">
-        <div class="footer-container">
-            <div class="footer-section about">
-                <h2 class="footer-heading">AIC-SOA</h2>
-                <div class="heading-underline"></div>
-                <p class="footer-description">
-                    Institute of Technical Education and Research (ITER) is the premier engineering school within Siksha
-                    'O' Anusandhan (SOA) University, located in Bhubaneswar, Odisha. Established in 1995 by Prof. (Dr.)
-                    Manojranjan Nayak to address the lack of technical education facilities in Odisha. It was granted
-                    deemed university status by the UGC in 2007 and is now recognized as one of the best engineering
-                    colleges in Odisha.
-                </p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-
-            <div class="footer-section links">
-                <h2 class="footer-heading">Quick Links</h2>
-                <div class="heading-underline"></div>
-                <div class="links-grid">
-                    <ul>
-                        <li><a href="#">HOME</a></li>
-                        <li><a href="#">AIC SOA TEAM</a></li>
-                        <li><a href="#">SERVICES</a></li>
-                        <li><a href="#">SELECTION PROCESS</a></li>
-                        <li><a href="#">AIC ECOSYSTEM</a></li>
-                        <li><a href="#">CONTACT US</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="#">ABOUT US</a></li>
-                        <li><a href="#">ELIGIBILITY</a></li>
-                        <li><a href="#">IDEA TO PROTOTYPE</a></li>
-                        <li><a href="#">FUNDING</a></li>
-                        <li><a href="#">CAREERS</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-section contact">
-                <h2 class="footer-heading">Contact Info</h2>
-                <div class="heading-underline"></div>
-                <div class="contact-item">
-                    <strong>Location:</strong> Jagamara, Khandagiri, Bhubaneswar – 751030, Odisha, India
-                </div>
-                <div class="contact-item">
-                    <strong>Email:</strong> <a href="mailto:ommsamal244@gmail.com">ommsamal244@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <strong>Phone:</strong> <a href="tel:+919338462523">+91-9338462523</a>, <a
-                        href="tel:06742351539">0674-2351539</a>
-                </div>
-            </div>
+      <div class="footer-container">
+        <div class="footer-section about">
+          <h2 class="footer-heading">AIC-SOA</h2>
+          <div class="heading-underline"></div>
+          <p class="footer-description">
+            Institute of Technical Education and Research (ITER) is the premier
+            engineering school within Siksha 'O' Anusandhan (SOA) University,
+            located in Bhubaneswar, Odisha. Established in 1995 by Prof. (Dr.)
+            Manojranjan Nayak to address the lack of technical education
+            facilities in Odisha. It was granted deemed university status by the
+            UGC in 2007 and is now recognized as one of the best engineering
+            colleges in Odisha.
+          </p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
         </div>
-    </footer>
-    <!-- Scripts -->
-    <script src="aic.js"></script>
-</body>
 
+        <div class="footer-section links">
+          <h2 class="footer-heading">Quick Links</h2>
+          <div class="heading-underline"></div>
+          <div class="links-grid">
+            <ul>
+              <li><a href="#">HOME</a></li>
+              <li><a href="#">AIC SOA TEAM</a></li>
+              <li><a href="#">SERVICES</a></li>
+              <li><a href="#">SELECTION PROCESS</a></li>
+              <li><a href="#">AIC ECOSYSTEM</a></li>
+              <li><a href="#">CONTACT US</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">ABOUT US</a></li>
+              <li><a href="#">ELIGIBILITY</a></li>
+              <li><a href="#">IDEA TO PROTOTYPE</a></li>
+              <li><a href="#">FUNDING</a></li>
+              <li><a href="#">CAREERS</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-section contact">
+          <h2 class="footer-heading">Contact Info</h2>
+          <div class="heading-underline"></div>
+          <div class="contact-item">
+            <strong>Location:</strong> Jagamara, Khandagiri, Bhubaneswar –
+            751030, Odisha, India
+          </div>
+          <div class="contact-item">
+            <strong>Email:</strong>
+            <a href="mailto:ommsamal244@gmail.com">info.aic@soa.sc.in</a>
+          </div>
+          <div class="contact-item">
+            <strong>Phone:</strong>
+            <a href="tel:+919338462523">+91-9338462523</a>,
+            <a href="tel:06742351539">0674-2351539</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Expert Video Modal -->
+    <div class="expert-video-modal" id="expertVideoModal">
+      <div class="expert-video-overlay"></div>
+
+      <div class="expert-video-box">
+        <button class="expert-video-close">&times;</button>
+        <div class="expert-video-wrapper">
+          <iframe
+            id="expertVideoFrame"
+            src=""
+            title="Expert Review Video"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+      </div>
+    </div>
+    <!-- Expert Video Modal JS -->
+
+<script src="aic.js"></script>
+</body>
 </html>
