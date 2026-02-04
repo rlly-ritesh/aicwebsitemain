@@ -352,28 +352,61 @@ const initTestimonials = () => {
 };
 
 // 
-// 6. NAVBAR SCROLL BEHAVIOR
+// 6. NAVBAR SCROLL BEHAVIOR + MOBILE TOGGLING
 // 
 const initNavbarScroll = () => {
     const navbar = document.querySelector('.navbar');
     const headerTop = document.querySelector('.header-top');
     const alertBar = document.querySelector('.alert-bar');
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
     if (!navbar || !headerTop) return;
 
-     const updateNavbarState = () => {
+    const updateNavbarState = () => {
         if (window.scrollY <= 5) {
-            navbar.classList.remove('navbar--scrolled'); // top: gradient background
+            navbar.classList.remove('navbar--scrolled');
             headerTop.classList.remove('header-top--scrolled');
-            if (alertBar) alertBar.classList.remove('alert-bar--hidden'); // show alert at top
+            if (alertBar) alertBar.classList.remove('alert-bar--hidden');
         } else {
-            navbar.classList.add('navbar--scrolled'); // scrolled: white translucent
+            navbar.classList.add('navbar--scrolled');
             headerTop.classList.add('header-top--scrolled');
-            if (alertBar) alertBar.classList.add('alert-bar--hidden'); // hide alert when scrolling
+            if (alertBar) alertBar.classList.add('alert-bar--hidden');
         }
     };
 
     window.addEventListener('scroll', updateNavbarState, { passive: true });
-    updateNavbarState(); // run once on load
+    updateNavbarState();
+
+    // Mobile hamburger toggle
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('is-open');
+            navToggle.classList.toggle('is-open', isOpen);
+        });
+
+        // Expand/collapse dropdowns on mobile tap
+        navLinks.querySelectorAll('.nav-item').forEach(item => {
+            const trigger = item.querySelector('.nav-link');
+            if (!trigger) return;
+            trigger.addEventListener('click', (e) => {
+                // Only intercept on narrow screens
+                if (window.innerWidth > 1100) return;
+                const hasDropdown = item.querySelector('.dropdown-menu');
+                if (!hasDropdown) return;
+                e.preventDefault();
+                item.classList.toggle('nav-item-open');
+            });
+        });
+
+        // Close menu when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth > 1100) return;
+            if (!navLinks.contains(e.target) && !navToggle.contains(e.target)) {
+                navLinks.classList.remove('is-open');
+                navToggle.classList.remove('is-open');
+            }
+        });
+    }
 };
 
 // 
