@@ -1363,13 +1363,9 @@ body {
     background: transparent;
     padding: 0 0 4px 16px;
     border-radius: 0;
-    display: none;
+    display: block;        /* always visible under its parent on mobile */
     opacity: 1;
     pointer-events: auto;
-  }
-
-  .nav-item.nav-item-open .dropdown-menu {
-    display: block;
   }
 
   .dropdown-menu a {
